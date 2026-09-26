@@ -4,7 +4,7 @@ Thư viện ảnh và video công khai. Khách có thể xem, tìm kiếm, lọc
 
 ## Website
 
-Truy cập Media Gallery tại [media-gallery-2he4.onrender.com](https://media-gallery-2he4.onrender.com/).
+Truy cập server test tại [media-gallery-2he4.onrender.com](https://media-gallery-2he4.onrender.com/).
 
 ## Cấu hình admin
 
