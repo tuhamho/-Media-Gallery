@@ -2,6 +2,10 @@
 
 Thư viện ảnh và video công khai. Khách có thể xem, tìm kiếm, lọc, mở toàn màn hình và sao chép liên kết. Chỉ admin đăng nhập mới có thể tải lên hoặc xóa tệp. Media tiếp tục được lưu trên Cloudinary trong thư mục `media-gallery`.
 
+## Website
+
+Truy cập Media Gallery tại [media-gallery-2he4.onrender.com](https://media-gallery-2he4.onrender.com/).
+
 ## Cấu hình admin
 
 Không có đăng ký công khai. Tạo một tài khoản quản trị duy nhất bằng các biến môi trường:
