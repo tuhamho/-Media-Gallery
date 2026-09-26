@@ -4,7 +4,11 @@ Thư viện ảnh và video công khai. Khách có thể xem, tìm kiếm, lọc
 
 ## Website
 
+<<<<<<< HEAD
 Truy cập [Media Gallery](https://media-gallery-2he4.onrender.com/).
+=======
+Truy cập server test tại [media-gallery-2he4.onrender.com](https://media-gallery-2he4.onrender.com/).
+>>>>>>> f6c539753205d6f4bb75d602c43d7606597acd92
 
 ## Cấu hình admin
 
