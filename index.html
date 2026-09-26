@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Uploader</title>
+    <title>Media Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -749,16 +749,126 @@
             background: var(--accent-primary);
             color: white;
         }
+
+        /* Refined gallery layout */
+        :root { --bg-primary: #10131a; --bg-secondary: #171b24; --card-bg: #191e28; --card-border: #2a3140; --accent-primary: #8b9cff; --accent-secondary: #52d6bd; --text-muted: #a4adbd; }
+        body { background: radial-gradient(ellipse at 50% -18%, #293450 0, #10131a 58%); }
+        .container { max-width: 1240px; padding: 34px 24px 64px; }
+        header { display:flex; align-items:center; justify-content:space-between; gap:24px; text-align:left; padding:22px 26px; margin-bottom:24px; background:rgba(25,30,40,.88); border:1px solid var(--card-border); border-radius:20px; box-shadow:0 14px 40px rgba(0,0,0,.16); }
+        header h1 { font-size:1.7rem; letter-spacing:-.045em; margin:0 0 2px; }
+        header p { font-size:.9rem; }
+        .header-copy { display:flex; align-items:center; gap:14px; }
+        .brand-mark { display:grid; place-items:center; width:46px; height:46px; border-radius:14px; color:#10131a; background:linear-gradient(135deg,#9eafff,#61dfc7); font-weight:800; font-size:1.2rem; }
+        .header-actions { display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:flex-end; }
+        .connection-status { margin:0; justify-content:flex-start; font-size:.82rem; color:var(--text-muted); }
+        .status-dot { width:8px; height:8px; }
+        .status-dot.connected { animation:none; box-shadow:0 0 0 4px rgba(34,197,94,.12); }
+        .admin-actions { display:flex; align-items:center; gap:10px; }
+        .admin-badge,.login-trigger,.logout-btn { border:1px solid var(--card-border); border-radius:999px; padding:9px 14px; color:var(--text-primary); background:#202633; font:600 .82rem Inter,sans-serif; }
+        .admin-badge { display:inline-flex; color:#7de2c7; border-color:rgba(82,214,189,.28); background:rgba(82,214,189,.09); }
+        .admin-actions [hidden] { display:none!important; }
+        .login-trigger,.logout-btn { cursor:pointer; transition:background .18s,border-color .18s,transform .18s; }
+        .login-trigger:hover,.logout-btn:hover { background:#2a3343; border-color:#64718a; transform:translateY(-1px); }
+        .upload-zone { background:linear-gradient(135deg,rgba(139,156,255,.11),rgba(82,214,189,.06)); border-color:#46516b; border-radius:20px; padding:40px 26px; }
+        .upload-zone::before { display:none; }
+        .upload-zone:hover { transform:translateY(-2px); }
+        .upload-icon { width:58px; height:58px; margin-bottom:16px; border-radius:17px; animation:none; }
+        .upload-icon svg { width:29px; height:29px; }
+        .upload-title { font-size:1.22rem; }
+        .upload-subtitle { font-size:.9rem; margin-bottom:15px; }
+        .format-badge { background:#242d3c; color:#bdc8ff; padding:5px 11px; }
+        .stats-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:20px 0 30px; padding:0; background:none; border:0; }
+        .stat-item { text-align:left; padding:17px 19px; border:1px solid var(--card-border); border-radius:16px; background:rgba(25,30,40,.9); }
+        .stat-value { font-size:1.55rem; background:none; color:#e7ebf4; -webkit-text-fill-color:currentColor; }
+        .stat-label { font-size:.78rem; }
+        .section-header { margin:20px 0 14px; }
+        .section-title { font-size:1.25rem; }
+        .refresh-btn { padding:9px 14px; border-radius:11px; }
+        .media-grid { grid-template-columns:repeat(auto-fill,minmax(245px,1fr)); gap:17px; }
+        .media-card { border-radius:16px; background:#191e28; transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; }
+        .media-card:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.22); }
+        .media-thumbnail { aspect-ratio:4/3; }
+        .media-thumbnail img,.media-thumbnail video { object-fit:cover; }
+        .media-info { padding:14px 15px 16px; }
+        .media-name { font-size:.9rem; }
+        .media-type { background:rgba(139,156,255,.13); color:#bdc8ff; }
+        .media-date { margin-top:8px; }
+        .media-actions { position:absolute; z-index:2; top:10px; right:10px; display:flex; gap:7px; }
+        .media-action-btn { display:grid; place-items:center; width:36px; height:36px; padding:0; color:#fff; background:rgba(16,19,26,.78); border:1px solid rgba(255,255,255,.2); border-radius:11px; cursor:pointer; opacity:0; transform:translateY(3px); transition:opacity .16s,transform .16s,background .16s; backdrop-filter:blur(8px); }
+        .media-action-btn svg { width:17px; height:17px; }
+        .media-card:hover .media-action-btn,.media-action-btn:focus-visible { opacity:1; transform:translateY(0); }
+        .media-action-btn:hover { background:#303a4d; }
+        .media-action-btn.delete-btn { position:static; width:36px; height:36px; opacity:0; transform:translateY(3px); background:rgba(151,44,56,.88); border:1px solid rgba(255,255,255,.2); }
+        .media-card:hover .media-action-btn.delete-btn,.media-action-btn.delete-btn:focus-visible { opacity:1; transform:translateY(0); }
+        .search-filter-bar { display:flex; gap:10px; margin:0 0 17px; }
+        .search-input,.filter-select { min-height:42px; padding:10px 13px; color:var(--text-primary); background:#191e28; border:1px solid var(--card-border); border-radius:11px; font:400 .9rem Inter,sans-serif; outline:none; }
+        .search-input { flex:1; }
+        .search-input:focus,.filter-select:focus { border-color:#8598ff; box-shadow:0 0 0 3px rgba(139,156,255,.13); }
+        .empty-state { grid-column:1/-1; }
+        .empty-state p { color:var(--text-muted); }
+        .login-dialog { width:min(420px,calc(100% - 32px)); margin:auto; padding:0; color:var(--text-primary); background:#191e28; border:1px solid #343d4e; border-radius:20px; box-shadow:0 24px 90px rgba(0,0,0,.5); }
+        .login-dialog::backdrop { background:rgba(5,8,13,.72); backdrop-filter:blur(5px); }
+        .login-form { padding:25px; }
+        .login-form h2 { font-size:1.25rem; margin-bottom:5px; }
+        .login-hint { margin-bottom:20px; color:var(--text-muted); font-size:.88rem; }
+        .login-label { display:block; margin:13px 0 6px; color:#dce2ee; font-size:.83rem; font-weight:600; }
+        .login-input { width:100%; padding:12px 13px; color:white; background:#11151d; border:1px solid #333c4d; border-radius:10px; font:inherit; }
+        .login-input:focus { outline:2px solid rgba(139,156,255,.6); border-color:transparent; }
+        .login-error { min-height:22px; margin-top:8px; color:#ff9b9b; font-size:.83rem; }
+        .login-form-actions { display:flex; justify-content:flex-end; gap:9px; margin-top:15px; }
+        .login-form-actions button { padding:10px 15px; border-radius:10px; border:1px solid var(--card-border); color:white; background:#252c39; font:600 .86rem Inter,sans-serif; cursor:pointer; }
+        .login-form-actions button[type=submit] { color:#121722; background:linear-gradient(135deg,#aab6ff,#73e1ca); border:0; }
+        .admin-only[hidden] { display:none!important; }
+        .toast { right:20px; bottom:20px; }
+        @media (max-width:700px) {
+            .container { padding:16px 14px 40px; }
+            header { align-items:flex-start; padding:17px; flex-direction:column; gap:15px; }
+            header h1 { font-size:1.45rem; }
+            .header-actions { width:100%; justify-content:space-between; }
+            .stats-bar { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+            .stat-item { padding:13px; }
+            .stat-value { font-size:1.3rem; }
+            .media-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+            .media-thumbnail { aspect-ratio:1/1; }
+            .media-info { padding:11px; }
+            .media-meta { gap:6px; }
+            .media-name { font-size:.82rem; }
+            .media-date { font-size:.72rem; }
+            .media-actions { top:7px; right:7px; gap:5px; }
+            .media-action-btn,.media-action-btn.delete-btn { width:32px; height:32px; border-radius:9px; opacity:1; transform:none; }
+            .search-filter-bar { flex-direction:column; }
+            .filter-select { width:100%; }
+            .section-title { font-size:1.05rem; gap:7px; }
+            .section-title svg { width:22px; height:22px; }
+            .refresh-btn { padding:8px 10px; font-size:.8rem; }
+            .upload-zone { padding:28px 13px; }
+            .upload-title { font-size:1rem; }
+            .upload-formats { gap:6px; }
+            .format-badge { font-size:.72rem; padding:4px 8px; }
+        }
+        @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Media Gallery</h1>
-            <p>Upload và chia sẻ ảnh, video với mọi người</p>
-            <div class="connection-status">
-                <span class="status-dot" id="statusDot"></span>
-                <span id="statusText">Đang kết nối...</span>
+            <div class="header-copy">
+                <div class="brand-mark" aria-hidden="true">M</div>
+                <div>
+                    <h1>Media Gallery</h1>
+                    <p>Thư viện ảnh và video được chia sẻ</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="connection-status">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="statusText">Đang kết nối...</span>
+                </div>
+                <div class="admin-actions">
+                    <span class="admin-badge" id="adminBadge"></span>
+                    <button class="login-trigger" id="loginTrigger" type="button">Đăng nhập admin</button>
+                    <button class="logout-btn" id="logoutButton" type="button" hidden>Đăng xuất</button>
+                </div>
             </div>
         </header>
 
@@ -776,7 +886,7 @@
             </div>
         </div>
 
-        <div class="upload-zone" id="uploadZone">
+        <div class="upload-zone admin-only" id="uploadZone" role="button" tabindex="0" aria-label="Tải ảnh hoặc video lên" hidden>
             <div class="upload-content">
                 <div class="upload-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
@@ -830,12 +940,21 @@
                 </svg>
                 Tất cả media
             </h2>
-            <button class="refresh-btn" id="refreshBtn" onclick="loadMedia()">
+            <button class="refresh-btn" id="refreshBtn" type="button" onclick="loadMedia()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                 </svg>
                 Làm mới
             </button>
+        </div>
+
+        <div class="search-filter-bar" role="search">
+            <input class="search-input" id="searchInput" type="search" placeholder="Tìm theo tên tệp..." aria-label="Tìm theo tên tệp">
+            <select class="filter-select" id="mediaFilter" aria-label="Lọc theo loại media">
+                <option value="all">Tất cả định dạng</option>
+                <option value="image">Chỉ ảnh</option>
+                <option value="video">Chỉ video</option>
+            </select>
         </div>
 
         <div class="media-grid" id="mediaGrid">
@@ -847,7 +966,27 @@
                 <p>Kéo thả hoặc nhấn vào vùng upload để bắt đầu</p>
             </div>
         </div>
+        <div class="empty-state" id="noResultsState" hidden>
+            <h3>Không tìm thấy tệp phù hợp</h3>
+            <p>Thử từ khóa khác hoặc đổi bộ lọc.</p>
+        </div>
     </div>
+
+    <dialog class="login-dialog" id="loginDialog" aria-labelledby="loginTitle">
+        <form class="login-form" id="loginForm">
+            <h2 id="loginTitle">Đăng nhập quản trị</h2>
+            <p class="login-hint">Đăng nhập để tải lên và quản lý tệp trong thư viện.</p>
+            <label class="login-label" for="adminUsername">Tên admin</label>
+            <input class="login-input" id="adminUsername" name="username" autocomplete="username" required>
+            <label class="login-label" for="adminPassword">Mật khẩu</label>
+            <input class="login-input" id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+            <div class="login-error" id="loginError" role="alert"></div>
+            <div class="login-form-actions">
+                <button type="button" id="cancelLogin">Đóng</button>
+                <button type="submit" id="submitLogin">Đăng nhập</button>
+            </div>
+        </form>
+    </dialog>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -881,8 +1020,10 @@
     <script>
         // State
         let mediaFiles = [];
+        let visibleMediaFiles = [];
         let currentLightboxIndex = 0;
         let isConnected = false;
+        let isAdmin = false;
 
         // DOM Elements
         const uploadZone = document.getElementById('uploadZone');
@@ -901,11 +1042,19 @@
         const progressText = document.getElementById('progressText');
         const statusDot = document.getElementById('statusDot');
         const statusText = document.getElementById('statusText');
+        const noResultsState = document.getElementById('noResultsState');
+        const searchInput = document.getElementById('searchInput');
+        const mediaFilter = document.getElementById('mediaFilter');
+        const loginDialog = document.getElementById('loginDialog');
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
 
         // Initialize
         document.getElementById('shareLink').value = window.location.href;
         checkConnection();
+        checkAuthStatus();
         loadMedia();
+        setInterval(checkAuthStatus, 60000);
 
         // Auto refresh every 10 seconds
         setInterval(loadMedia, 10000);
@@ -915,7 +1064,20 @@
         uploadZone.addEventListener('dragover', handleDragOver);
         uploadZone.addEventListener('dragleave', handleDragLeave);
         uploadZone.addEventListener('drop', handleDrop);
+        uploadZone.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+        });
         fileInput.addEventListener('change', handleFileSelect);
+        searchInput.addEventListener('input', renderMediaGrid);
+        mediaFilter.addEventListener('change', renderMediaGrid);
+        document.getElementById('loginTrigger').addEventListener('click', () => {
+            loginError.textContent = '';
+            loginDialog.showModal();
+            document.getElementById('adminUsername').focus();
+        });
+        document.getElementById('cancelLogin').addEventListener('click', () => loginDialog.close());
+        document.getElementById('logoutButton').addEventListener('click', logoutAdmin);
+        loginForm.addEventListener('submit', loginAdmin);
         lightboxClose.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) closeLightbox();
@@ -938,6 +1100,8 @@
                         isConnected = true;
                         statusDot.classList.add('connected');
                         statusText.textContent = 'Đã kết nối server';
+                    } else {
+                        throw new Error('Server unavailable');
                     }
                 })
                 .catch(() => {
@@ -945,6 +1109,82 @@
                     statusDot.classList.remove('connected');
                     statusText.textContent = 'Offline - Server không chạy';
                 });
+        }
+
+        async function checkAuthStatus() {
+            try {
+                const wasAdmin = isAdmin;
+                const response = await fetch('/api/auth/status');
+                const status = await response.json();
+                setAdminState(Boolean(status.authenticated), status.username);
+                if (wasAdmin && !status.authenticated && !loginDialog.open) {
+                    showToast('Phiên admin đã hết hạn. Vui lòng đăng nhập lại.', 'error');
+                    loginError.textContent = 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.';
+                    loginDialog.showModal();
+                }
+            } catch (error) {
+                // Keep the current UI state during a temporary network failure.
+            }
+        }
+
+        function setAdminState(authenticated, username) {
+            const stateChanged = isAdmin !== authenticated;
+            isAdmin = authenticated;
+            uploadZone.hidden = !isAdmin;
+            document.getElementById('loginTrigger').hidden = isAdmin;
+            document.getElementById('logoutButton').hidden = !isAdmin;
+            const badge = document.getElementById('adminBadge');
+            badge.hidden = !isAdmin;
+            badge.textContent = isAdmin ? `Admin · ${username || ''}` : '';
+            if (stateChanged) renderMediaGrid();
+        }
+
+        async function loginAdmin(event) {
+            event.preventDefault();
+            loginError.textContent = '';
+            const submitButton = document.getElementById('submitLogin');
+            submitButton.disabled = true;
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: document.getElementById('adminUsername').value,
+                        password: document.getElementById('adminPassword').value
+                    })
+                });
+                const result = await response.json();
+                if (!response.ok) {
+                    loginError.textContent = result.error || 'Đăng nhập không thành công.';
+                    return;
+                }
+                loginForm.reset();
+                loginDialog.close();
+                setAdminState(true, result.username);
+                showToast('Đã đăng nhập quản trị.', 'success');
+            } catch (error) {
+                loginError.textContent = 'Không thể kết nối máy chủ. Vui lòng thử lại.';
+            } finally {
+                submitButton.disabled = false;
+            }
+        }
+
+        async function logoutAdmin() {
+            try {
+                const response = await fetch('/api/auth/logout', { method: 'POST' });
+                if (!response.ok) throw new Error('Logout failed');
+                setAdminState(false);
+                showToast('Đã đăng xuất admin.', 'success');
+            } catch (error) {
+                showToast('Không thể đăng xuất do lỗi kết nối. Vui lòng thử lại.', 'error');
+            }
+        }
+
+        async function handleAuthRequired() {
+            setAdminState(false);
+            showToast('Phiên admin đã hết hạn. Vui lòng đăng nhập lại.', 'error');
+            loginError.textContent = 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.';
+            if (!loginDialog.open) loginDialog.showModal();
         }
 
         function handleDragOver(e) {
@@ -1031,6 +1271,8 @@
                         const response = JSON.parse(xhr.responseText);
                         showToast(`Đã upload ${response.files.length} file!`, 'success');
                         loadMedia();
+                    } else if (xhr.status === 401) {
+                        handleAuthRequired();
                     } else {
                         showToast('Upload thất bại!', 'error');
                     }
@@ -1059,6 +1301,7 @@
             fetch('/api/media')
                 .then(res => res.json())
                 .then(files => {
+                    if (!Array.isArray(files)) throw new Error('Invalid media response');
                     mediaFiles = files;
                     renderMediaGrid();
                     updateStats();
@@ -1071,18 +1314,19 @@
         }
 
         function renderMediaGrid() {
-            // Clear existing cards
             const oldCards = mediaGrid.querySelectorAll('.media-card');
             oldCards.forEach(card => card.remove());
 
-            if (mediaFiles.length === 0) {
-                emptyState.style.display = 'block';
-                return;
-            }
+            const query = searchInput.value.trim().toLocaleLowerCase('vi');
+            const type = mediaFilter.value;
+            visibleMediaFiles = mediaFiles.filter(item =>
+                (!query || item.name.toLocaleLowerCase('vi').includes(query)) &&
+                (type === 'all' || item.type === type)
+            );
+            emptyState.hidden = mediaFiles.length > 0;
+            noResultsState.hidden = mediaFiles.length === 0 || visibleMediaFiles.length > 0;
 
-            emptyState.style.display = 'none';
-
-            mediaFiles.forEach((item, index) => {
+            visibleMediaFiles.forEach((item, index) => {
                 const card = createMediaCard(item, index);
                 mediaGrid.appendChild(card);
             });
@@ -1094,24 +1338,27 @@
             card.innerHTML = `
                 <div class="media-thumbnail">
                     ${item.type === 'image'
-                        ? `<img src="${item.url}" alt="${item.name}" loading="lazy">`
-                        : `<video src="${item.url}" muted></video>
+                        ? `<img src="${escapeHtml(item.url)}" alt="${escapeHtml(item.name)}" loading="lazy">`
+                        : `<video src="${escapeHtml(item.url)}" muted preload="metadata"></video>
                            <div class="video-overlay">
                                <div class="play-icon">
                                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
                                </div>
                            </div>`
                     }
-                    <button class="delete-btn" data-id="${item.id}">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+                    <div class="media-actions">
+                        <button class="media-action-btn copy-media-btn" type="button" aria-label="Sao chép liên kết tệp" title="Sao chép liên kết">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+                        </button>
+                        ${isAdmin ? `<button class="media-action-btn delete-btn" type="button" aria-label="Xóa tệp" title="Xóa tệp">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>` : ''}
+                    </div>
                 </div>
                 <div class="media-info">
-                    <div class="media-name" title="${item.name}">${item.name}</div>
+                    <div class="media-name" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</div>
                     <div class="media-meta">
-                        <span class="media-type">${item.type}</span>
+                        <span class="media-type">${item.type === 'video' ? 'Video' : 'Ảnh'}</span>
                         <span class="media-size">${formatSize(item.size)}</span>
                     </div>
                     <div class="media-date">${formatDate(item.createdAt)}</div>
@@ -1119,12 +1366,17 @@
             `;
 
             card.addEventListener('click', (e) => {
-                if (!e.target.closest('.delete-btn')) {
+                if (!e.target.closest('.media-action-btn')) {
                     openLightbox(index);
                 }
             });
 
-            card.querySelector('.delete-btn').addEventListener('click', (e) => {
+            card.querySelector('.copy-media-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                copyMediaLink(item.url);
+            });
+            const deleteButton = card.querySelector('.delete-btn');
+            if (deleteButton) deleteButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 deleteMedia(item);
             });
@@ -1135,14 +1387,16 @@
         function deleteMedia(item) {
             if (!confirm('Bạn có chắc muốn xóa file này?')) return;
 
-            const params = new URLSearchParams({ public_id: item.id, resource_type: item.type });
-            fetch(`/api/media?${params}`, { method: 'DELETE' })
+            const params = new URLSearchParams({ resource_type: item.type });
+            fetch(`/api/media/${encodeURIComponent(item.id)}?${params}`, { method: 'DELETE' })
                 .then(res => {
                     if (res.ok) {
                         showToast('Đã xóa file!', 'success');
                         loadMedia();
+                    } else if (res.status === 401) {
+                        handleAuthRequired();
                     } else {
-                        showToast('Xóa thất bại!', 'error');
+                        return res.json().then(result => showToast(result.error || 'Xóa thất bại!', 'error'));
                     }
                 })
                 .catch(() => showToast('Lỗi kết nối!', 'error'));
@@ -1177,7 +1431,7 @@
         }
 
         function openLightbox(index) {
-            if (mediaFiles.length === 0) return;
+            if (visibleMediaFiles.length === 0) return;
             currentLightboxIndex = index;
             updateLightbox();
             lightbox.classList.add('active');
@@ -1193,22 +1447,22 @@
 
         function navigateLightbox(direction) {
             currentLightboxIndex += direction;
-            if (currentLightboxIndex < 0) currentLightboxIndex = mediaFiles.length - 1;
-            if (currentLightboxIndex >= mediaFiles.length) currentLightboxIndex = 0;
+            if (currentLightboxIndex < 0) currentLightboxIndex = visibleMediaFiles.length - 1;
+            if (currentLightboxIndex >= visibleMediaFiles.length) currentLightboxIndex = 0;
             updateLightbox();
         }
 
         function updateLightbox() {
-            const item = mediaFiles[currentLightboxIndex];
+            const item = visibleMediaFiles[currentLightboxIndex];
             if (!item) return;
 
             if (item.type === 'image') {
-                lightboxContent.innerHTML = `<img src="${item.url}" alt="${item.name}">`;
+                lightboxContent.innerHTML = `<img src="${escapeHtml(item.url)}" alt="${escapeHtml(item.name)}">`;
             } else {
-                lightboxContent.innerHTML = `<video src="${item.url}" controls autoplay></video>`;
+                lightboxContent.innerHTML = `<video src="${escapeHtml(item.url)}" controls autoplay></video>`;
             }
 
-            lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${mediaFiles.length}`;
+            lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${visibleMediaFiles.length}`;
         }
 
         function showToast(message, type = 'success') {
@@ -1234,6 +1488,32 @@
             input.select();
             document.execCommand('copy');
             showToast('Đã sao chép link!', 'success');
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? '').replace(/[&<>"']/g, character => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[character]);
+        }
+
+        async function copyMediaLink(url) {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    const temporaryInput = document.createElement('textarea');
+                    temporaryInput.value = url;
+                    temporaryInput.style.position = 'fixed';
+                    temporaryInput.style.opacity = '0';
+                    document.body.appendChild(temporaryInput);
+                    temporaryInput.select();
+                    document.execCommand('copy');
+                    temporaryInput.remove();
+                }
+                showToast('Đã sao chép liên kết tệp!', 'success');
+            } catch (error) {
+                showToast('Không thể sao chép liên kết.', 'error');
+            }
         }
     </script>
 </body>

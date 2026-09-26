@@ -1,98 +1,71 @@
-# 📸 Media Gallery - Cloud Edition
+# Media Gallery
 
-Upload và chia sẻ ảnh/video với mọi người. File được lưu trên **Cloudinary** 
+Thư viện ảnh và video công khai. Khách có thể xem, tìm kiếm, lọc, mở toàn màn hình và sao chép liên kết. Chỉ admin đăng nhập mới có thể tải lên hoặc xóa tệp. Media tiếp tục được lưu trên Cloudinary trong thư mục `media-gallery`.
 
-## 🚀 Deploy lên Render.com 
+## Cấu hình admin
 
-### Bước 1: Chuẩn bị Cloudinary
+Không có đăng ký công khai. Tạo một tài khoản quản trị duy nhất bằng các biến môi trường:
 
-1. Đăng ký miễn phí tại [cloudinary.com](https://cloudinary.com)
-2. Copy credentials từ Dashboard:
-   - Cloud Name
-   - API Key
-   - API Secret
+- `ADMIN_USERNAME`: tên đăng nhập admin.
+- `ADMIN_PASSWORD_HASH`: mật khẩu admin đã băm bằng scrypt.
+- `SESSION_SECRET`: khóa ngẫu nhiên dùng ký cookie phiên, tối thiểu 32 ký tự.
 
-### Bước 2: Deploy lên Render
-
-1. Push code lên **GitHub**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Media Gallery with Cloudinary"
-   git remote add origin https://github.com/YOUR_USERNAME/media-gallery.git
-   git push -u origin main
-   ```
-
-2. Đăng nhập [render.com](https://render.com) bằng GitHub
-
-3. Tạo **New → Web Service**:
-   - Connect repo của bạn
-   - Region: Singapore (gần nhất)
-   - Branch: `main`
-   - Root Directory: (để trống)
-   - Runtime: `Node`
-   - Build Command: `npm install`
-   - Start Command: `npm start`
-
-4. Thêm Environment Variables (trong tab Environment):
-   ```
-   CLOUDINARY_CLOUD_NAME = your_cloud_name
-   CLOUDINARY_API_KEY = your_api_key
-   CLOUDINARY_API_SECRET = your_api_secret
-   ```
-
-5. Nhấn **Create Web Service** và đợi deploy (~2-3 phút)
-
-6. Sau khi xong, website sẽ có URL dạng: `https://your-app.onrender.com`
-
-### Bước 3: Hoàn tất! 🎉
-
-- Truy cập URL của bạn
-- Upload ảnh/video
-- Chia sẻ link cho mọi người!
-
-## 💡 Tính năng
-
-- ✅ Upload ảnh (JPG, PNG, GIF, WEBP, SVG)
-- ✅ Upload video (MP4, WEBM, MOV)
-- ✅ Lưu trên Cloudinary (25GB miễn phí)
-- ✅ Server chạy 24/7 trên Render
-- ✅ Responsive trên mobile
-- ✅ Xem fullscreen với lightbox
-- ✅ Xóa file trực tiếp
-
-## 🔧 Chạy local (để test)
+Tạo hash trên máy của bạn. Lệnh sẽ hỏi mật khẩu không hiển thị ký tự và chỉ in chuỗi hash:
 
 ```bash
-# 1. Clone repo
-git clone https://github.com/YOUR_USERNAME/media-gallery.git
-cd media-gallery
+node scripts/hash-admin-password.js
+```
 
-# 2. Tạo file .env từ .env.example
-cp .env.example .env
-# Sửa .env với credentials của bạn
+Tạo `SESSION_SECRET` bằng lệnh sau và lưu trực tiếp vào biến môi trường, không đưa vào Git:
 
-# 3. Install & chạy
+```bash
+node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+```
+
+Cookie phiên có `HttpOnly`, `SameSite=Strict`, thời hạn 8 giờ và bật `Secure` khi kết nối HTTPS. Sau 5 lần đăng nhập sai từ cùng IP, endpoint đăng nhập tạm khóa trong 15 phút.
+
+## Chạy local
+
+```bash
 npm install
+cp .env.example .env
+```
+
+Điền Cloudinary credentials cùng `ADMIN_USERNAME`, hash từ script và một khóa `SESSION_SECRET` ngẫu nhiên vào `.env`. Không commit `.env`; file này đã nằm trong `.gitignore`.
+
+```bash
 npm start
-
-# 4. Mở http://localhost:3000
 ```
 
-## 📁 Cấu trúc file
+Mở [http://localhost:3000](http://localhost:3000). Thư viện vẫn công khai; chọn **Đăng nhập admin** để tải lên hoặc xóa.
 
+## Cấu hình Render
+
+Trước khi deploy phiên bản này, mở **Web Service → Environment** trên Render và thêm các biến dưới đây. Nếu deploy khi thiếu biến admin, server sẽ dừng khởi động để không vô tình mở upload/xóa công khai. Tạo hash và khóa phiên trên máy của bạn; không gửi mật khẩu cho người khác và không ghi giá trị thật vào repository.
+
+```text
+CLOUDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET
+ADMIN_USERNAME
+ADMIN_PASSWORD_HASH
+SESSION_SECRET
 ```
-├── server.js          # Backend (Express + Cloudinary)
-├── index.html         # Frontend
-├── package.json       # Dependencies
-├── .env.example       # Template cho env variables
-├── .gitignore         # Ignores node_modules, .env
-├── README.md          # Hướng dẫn
-└── SPEC.md           # Specification
-```
 
-## ⚠️ Lưu ý
+Lưu thay đổi và deploy lại service. Truy cập URL HTTPS của ứng dụng, nhấn **Đăng nhập admin** rồi đăng nhập bằng `ADMIN_USERNAME` và mật khẩu gốc tương ứng với hash. Nếu thay `SESSION_SECRET`, các cookie phiên hiện tại mất hiệu lực.
 
-- **Cloudinary free tier**: 25GB storage, 25GB bandwidth/tháng
-- **Render free tier**: Service sleep sau 15 phút không dùng, wake up ~30s
-  - Để tránh sleep: Dùng Render Background Worker hoặc cron job ping
+## Quyền truy cập API
+
+- `GET /api/media`: công khai.
+- `GET /api/auth/status`: công khai, chỉ trả trạng thái đăng nhập.
+- `POST /api/auth/login` và `POST /api/auth/logout`: endpoint phiên admin.
+- `POST /api/upload`: yêu cầu phiên admin hợp lệ.
+- `DELETE /api/media?public_id=...&resource_type=image|video`: yêu cầu phiên admin hợp lệ. Route `DELETE /api/media/:id` cũng được hỗ trợ.
+
+## Tính năng
+
+- Tải nhiều ảnh và video lên Cloudinary; JPEG, PNG và WebP được nén trên trình duyệt khi phù hợp.
+- GIF, SVG và video được gửi nguyên trạng.
+- Tìm kiếm theo tên, lọc ảnh/video, sao chép liên kết và xem toàn màn hình.
+- Thống kê thư viện, trạng thái kết nối, tiến trình upload và giao diện responsive.
+- Không có tài khoản tự đăng ký.
