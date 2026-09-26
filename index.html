@@ -1092,6 +1092,7 @@
     </defs></svg>
 
         <svg class="theme-backdrop" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <g class="backdrop-current"><path class="mural-shadow" d="M-80 202 105 68l156 34 104-68 180 123-97 86 86 97-236-17-131 108-157-51zM1300-22l201 72 109 151-128 111-162-71-97 61-82-185zM-46 812l191-117 150 44 93 173-252 115-165-71zM1320 857l117-129 163 58 49 167-258 78-130-78z"/><path class="mural-fill" d="M-80 180 105 46l156 34 104-68 180 123-97 86 86 97-236-17-131 108-157-51zM1300-44l201 72 109 151-128 111-162-71-97 61-82-185zM-46 790l191-117 150 44 93 173-252 115-165-71zM1320 835l117-129 163 58 49 167-258 78-130-78z"/><path d="m-80 180 185-134 156 34 104-68 180 123-97 86 86 97-236-17-131 108-157-51zM1300-44l201 72 109 151-128 111-162-71-97 61-82-185zM-46 790l191-117 150 44 93 173-252 115-165-71zM1320 835l117-129 163 58 49 167-258 78-130-78z"/><path class="mural-ribbon" d="M-25 378c177-126 260 25 400-50s228-156 354-80 174 178 340 105 270-135 547-16M-45 665c207-112 301 64 466 4s214-159 367-94 207 144 359 68 272-107 487-35"/><path class="mural-highlight" d="M-25 367c177-126 260 25 400-50s228-156 354-80 174 178 340 105 270-135 547-16m-210 344c182-81 321-89 510-14"/><path class="mural-outline" d="M325 492c-100-102 28-204 106-105 78-99 206 3 106 105l-106 91zM1190 388c-76-77 22-154 82-80 60-74 158 4 82 80l-82 46z"/><path class="mural-accent" d="m492 94 37 61 71 11-52 50 13 70-64-34-63 37 12-70-52-49 71-11zM1314 590l-69 78 59 7-51 71 127-97-62-8 42-52M240 426l42-39 39 40-41 39zM1030 807l30-51 28 47 54 7-40 38 10 52-49-26-48 28 9-53-40-37z"/><path class="mural-highlight" d="m512 102 20 40 44 8m703 505 64-69m-1032-99 33-32"/></g>
             <g class="backdrop-light"><path class="mural-shadow" d="M-70 145 170 35l145 78-136 57 128 87-272-7M1390 18l128 92-104 47 92 82-238-67M34 878l196-136 93 71-115 149-235-14"/><path d="m-70 145 240-110 145 78-136 57 128 87-272-7M1390 18l128 92-104 47 92 82-238-67M34 878l196-136 93 71-115 149-235-14"/><path class="mural-accent" d="m93 458 85-77 49 42-45 105-123 12m1318 248 101-86 82 49-75 104-124 9"/><path class="mural-highlight" d="m17 122 158-73m1221 13 111 90M106 874l116-81"/></g>
             <g class="backdrop-dark"><path class="mural-shadow" d="m-80 244 217-178 160 88-108 172-230 20M1490 47l176 150-109 183-215-91zM-28 816l178-122 168 53-60 209H-4"/><path d="m-80 244 217-178 160 88-108 172-230 20M1490 47l176 150-109 183-215-91zM-28 816l178-122 168 53-60 209H-4"/><circle class="mural-accent" cx="1390" cy="780" r="160"/><path class="mural-highlight" d="m1210 495 118-96 117 56-31 137-160 20zM20 290l100-88m1330 1-90 114"/></g>
             <g class="backdrop-pinterest"><path class="mural-shadow" d="M-70 214C95 21 269 36 302 145s-96 190-46 264 149-7 212-101 154-134 231-81M1660 151c-170-116-334-59-288 46s104 89 68 157-158 24-235-70-158-101-243-40M-25 934c148-205 306-183 321-75s-80 126-37 185"/><path d="M-70 214C95 21 269 36 302 145s-96 190-46 264 149-7 212-101 154-134 231-81M1660 151c-170-116-334-59-288 46s104 89 68 157-158 24-235-70-158-101-243-40M-25 934c148-205 306-183 321-75s-80 126-37 185"/><path class="mural-accent" d="M1390 650c-108-70-174 12-104 72s149 19 166-47M128 684c73-62 124-40 157 26"/><path class="mural-highlight" d="M-10 180c84-93 162-104 231-68m1190 44c76-45 144-37 205 18"/></g>
@@ -1295,7 +1296,7 @@
             <button type="button" id="closeThemePicker" aria-label="Đóng bảng chọn giao diện">×</button>
         </div>
         <div class="theme-choice-grid" id="themeChoiceGrid" aria-label="Các giao diện Media Gallery"></div>
-        <div class="theme-picker-footer"><span id="activeThemeLabel" aria-live="polite">Đang dùng: Original</span><button id="resetGalleryTheme" type="button">Reset to Original</button></div>
+        <div class="theme-picker-footer"><span id="activeThemeLabel" aria-live="polite">Đang dùng: Graffiti Gallery</span><button id="resetGalleryTheme" type="button">Về giao diện mặc định</button></div>
     </dialog>
 
     <dialog class="login-dialog" id="loginDialog" aria-labelledby="loginTitle">
@@ -1544,7 +1545,7 @@
 
         function renderThemeChoices() {
             const categories = [
-                ['original','Thiết kế gốc'], ['minimal','Tối giản & công việc'],
+                ['original','Bản chính'], ['minimal','Tối giản & công việc'],
                 ['creative','Không gian sáng tạo'], ['memories','Kỷ niệm qua ống kính'], ['special','Thế giới riêng']
             ];
             const grid = document.getElementById('themeChoiceGrid');
@@ -1553,7 +1554,7 @@
                     <h3 id="theme-category-${key}">${name}</h3>
                     <div class="theme-category-options">${galleryThemePresets.filter(p => p.category === key).map(preset => {
                         const palette = preset[preset.defaultMode];
-                        const motif = ({studio:'geometry',japanese:'branch',polaroid:'star',scrapbook:'flower',instant:'flower',playful:'bubble',love:'love-crystal'})[preset.slug] || 'geometry';
+                        const motif = ({current:'geometry',pinterest:'flower',studio:'geometry',glass:'geometry',dashboard:'camera',japanese:'branch',neon:'geometry',photobooth:'camera',polaroid:'star',scrapbook:'flower','film-lab':'camera',instant:'flower',darkroom:'drop',digital:'camera',playful:'bubble',love:'love-crystal'})[preset.slug] || 'geometry';
                         return `<button class="theme-choice" type="button" data-theme-choice="${preset.id}" aria-pressed="${selectedGalleryTheme === preset.id}" aria-label="${preset.name}. ${preset.description}">
                             <span class="theme-preview-art preview-${preset.slug}" aria-hidden="true" style="--pv-bg:${palette[0]};--pv-card:${palette[2]};--pv-accent:${palette[4]};--pv-ink:${palette[6]}">
                                 <span class="preview-heading"></span><span class="preview-nav"></span>

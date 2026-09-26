@@ -74,15 +74,15 @@ Manifest chỉ chứa tên album, thời gian tạo và public ID của media v�
 
 ## Giao diện cá nhân
 
-Nút **Themes** mở 18 lựa chọn, chia thành các nhóm Original, tối giản, sáng tạo, kỷ niệm và đặc biệt. Mỗi lựa chọn có preview, mô tả và dấu đang chọn. Dùng Tab để di chuyển, Enter/Space để chọn, phím mũi tên/Home/End để duyệt các thẻ; Escape hoặc nút đóng để thoát. **Reset to Original** đưa về giao diện gốc.
+Nút **Themes** mở 18 lựa chọn, chia thành các nhóm flagship, tối giản, sáng tạo, kỷ niệm và đặc biệt. **Graffiti Gallery** là giao diện mặc định mới; mỗi theme có bố cục, màu sắc, cách đóng khung ảnh và mural SVG riêng. Mỗi lựa chọn có preview, mô tả và dấu đang chọn. Dùng Tab để di chuyển, Enter/Space để chọn, phím mũi tên/Home/End để duyệt các thẻ; Escape hoặc nút đóng để thoát. **Về giao diện mặc định** khôi phục Graffiti Gallery.
 
-- `index.html`: giữ CSS gốc, tích hợp bộ chọn, các SVG tự vẽ và bố cục dải Photobooth bằng chính các thẻ media hiện có.
-- `themes.css`: bố cục, bề mặt có chiều sâu và chi tiết riêng cho từng theme; giảm họa tiết trên điện thoại, giữ focus rõ và tôn trọng `prefers-reduced-motion`.
+- `index.html`: tích hợp bộ chọn, các mural SVG tự vẽ và bố cục dải Photobooth bằng chính các thẻ media hiện có.
+- `themes.css`: cấu trúc từng theme, bố cục riêng, bề mặt có chiều sâu và mural; giản lược chi tiết trên điện thoại, giữ focus rõ và tôn trọng `prefers-reduced-motion`.
 - `themes.js`: đọc lựa chọn trước khi nội dung trang xuất hiện; lưu theme và chế độ sáng/tối riêng từng theme trong localStorage. Không gọi API hoặc lưu thông tin đăng nhập.
 
 Các khóa trình duyệt là `media-gallery-gallery-theme`, `media-gallery-theme` và `media-gallery-theme-modes`. Không cần thêm biến môi trường hoặc thư viện ứng dụng. Pinterest dùng CSS columns với tỷ lệ ảnh gốc; Classic Photobooth gom 3–4 tệp mỗi dải khi đủ tệp, dải cuối có thể ít hơn. Bộ lọc và thao tác với tệp vẫn dùng dữ liệu API hiện có.
 
-Để kiểm tra bằng mắt, chạy `npm start`, mở trang ở kích thước desktop và điện thoại, so sánh Pinterest, Dashboard, Scrapbook, Polaroid, Neon Cyber và Dreamy Love. Thử đổi theme trong lúc upload, tải lại trang, mở viewer, trở về Original và kiểm tra đăng xuất. Các kiểm tra DOM/CSS tự động không thay thế việc kiểm tra hiển thị thực tế hoặc upload lên Cloudinary.
+Để kiểm tra bằng mắt, chạy `npm start`, mở trang ở kích thước desktop và điện thoại, so sánh Graffiti Gallery (giao diện mặc định), Pinterest, Dashboard, Scrapbook, Polaroid, Neon Cyber và Dreamy Love. Thử đổi giao diện khi đang xem thư viện, tải lại trang, mở viewer, trở về Graffiti Gallery và kiểm tra đăng xuất. Các kiểm tra DOM/CSS tự động không thay thế việc kiểm tra hiển thị thực tế hoặc upload lên Cloudinary.
 
 ## API
 
