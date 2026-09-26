@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv CLAUDE/index.html . && mv CLAUDE/SPEC.md . && mv CLAUDE/.claude . && ls -la)"
+    ]
+  }
+}
