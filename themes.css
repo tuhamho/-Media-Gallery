@@ -94,7 +94,7 @@ body[data-theme="dark"] .theme-category h3::after { background:#464755; }
 .preview-darkroom .preview-frame::before { content:''; position:absolute; width:7px; height:6px; left:40%; top:-3px; background:#b39180; }
 .preview-digital { border:5px solid #3a474d; --pv-radius:0px; }
 .preview-digital .preview-heading::before { border-radius:50%; background:#bed7a1; }
-.preview-playful { background-image:radial-gradient(#9884d938 1px,transparent 1px); background-size:8px 8px; }
+.preview-playful { background-image:radial-gradient(ellipse at 14% 12%,#f5b0c9 0 13%,transparent 14%),radial-gradient(ellipse at 89% 78%,#bbafe9 0 17%,transparent 18%),linear-gradient(145deg,var(--pv-bg),#fff3d7); }
 .preview-playful .preview-frame { border:2px solid #aa8dda; border-radius:7px 7px 1px; }
 .preview-playful .preview-frame:nth-child(2n) { border-color:#eba861; transform:rotate(4deg); }
 .preview-love { background-image:radial-gradient(at 0 0,#e8adbe66,transparent 70%); --pv-radius:9px; }
@@ -265,7 +265,7 @@ body.theme-neon .brand-mark { border-radius:0; background:transparent; color:var
 body.theme-neon .section-title::after { content:' / MEDIA INDEX'; margin-left:12px; color:var(--accent-secondary); font:500 .68rem monospace; letter-spacing:.06em; }
 
 /* 09: each strip holds up to four real cards; controls live below each print. */
-body.theme-photobooth { --radius:1px; --heading-font:'Playfair Display',Georgia,serif; background-image:radial-gradient(#7b736014 .6px,transparent .8px); background-size:5px 5px; }
+body.theme-photobooth { --radius:1px; --heading-font:'Playfair Display',Georgia,serif; }
 body.theme-photobooth .media-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; counter-reset:archive-frame strip-number; }
 body.theme-photobooth .photo-strip { counter-increment:strip-number; padding:14px 16px 22px; min-width:0; background:var(--card-bg); border:1px solid var(--card-border); box-shadow:3px 6px 0 color-mix(in srgb,var(--card-border) 45%,transparent); }
 body.theme-photobooth .photo-strip::before { content:'PHOTOBOOTH / ' counter(strip-number,decimal-leading-zero); display:block; padding:2px 0 14px; text-align:center; font:600 .65rem monospace; letter-spacing:.12em; color:var(--accent-primary); }
@@ -293,7 +293,7 @@ body.theme-polaroid .media-name { font:500 1.08rem 'Playfair Display',Georgia,se
 body.theme-polaroid .media-meta { justify-content:center; }
 
 /* 11: layered paper, coordinated labels and stamps, never laid over controls. */
-body.theme-scrapbook { --radius:2px; --heading-font:'Playfair Display',Georgia,serif; --gallery-gap:30px; background-image:repeating-linear-gradient(0deg,#8c724112 0 1px,transparent 1px 8px),radial-gradient(#8c724114 .7px,transparent 1px); background-size:auto,5px 5px; }
+body.theme-scrapbook { --radius:2px; --heading-font:'Playfair Display',Georgia,serif; --gallery-gap:30px; }
 body.theme-scrapbook .theme-art { display:block; height:70px; margin-bottom:18px; }
 body.theme-scrapbook .art-scrapbook { display:block; }
 body.theme-scrapbook .media-grid { display:block; columns:3 275px; column-gap:32px; padding:8px; }
@@ -306,7 +306,7 @@ body.theme-scrapbook .media-album { border-style:dashed; background:var(--bg-sec
 body.theme-scrapbook .media-date { display:inline-block; padding:3px 6px; border:1px dashed var(--card-border); transform:rotate(-1deg); }
 
 /* 12: contact sheet, with grain limited to the page background. */
-body.theme-film-lab { --radius:0px; --columns:4; --gallery-gap:16px; --heading-font:ui-monospace,Consolas,monospace; background-image:radial-gradient(#6a57331a .7px,transparent 1px); background-size:4px 4px; }
+body.theme-film-lab { --radius:0px; --columns:4; --gallery-gap:16px; --heading-font:ui-monospace,Consolas,monospace; }
 body.theme-film-lab .media-grid { padding:18px; border:1px solid var(--card-border); background:var(--bg-secondary); }
 body.theme-film-lab .media-card { border:1px solid var(--card-border); padding:7px; }
 body.theme-film-lab .media-thumbnail { border:7px solid #28291f; border-inline-width:11px; }
@@ -343,7 +343,7 @@ body.theme-digital .media-name,body.theme-digital .media-date,body.theme-digital
 body.theme-digital .section-title::after { content:'PLAYBACK'; font:500 .62rem monospace; margin-left:12px; padding:4px 7px; border:1px solid var(--accent-primary); color:var(--accent-primary); }
 
 /* 16: vivid original SVG stickers, comic frame corners, small alternating tilts. */
-body.theme-playful { --radius:16px; --columns:3; --gallery-gap:25px; background-image:radial-gradient(color-mix(in srgb,var(--accent-secondary) 20%,transparent) 1px,transparent 1px); background-size:18px 18px; }
+body.theme-playful { --radius:16px; --columns:3; --gallery-gap:25px; }
 body.theme-playful .theme-art { display:block; height:75px; margin-bottom:14px; }
 body.theme-playful .art-playful { display:block; }
 body.theme-playful .media-card { padding:11px; border:2px solid var(--accent-secondary); border-radius:20px 20px 4px 20px; box-shadow:4px 4px 0 color-mix(in srgb,var(--accent-secondary) 35%,var(--bg-secondary)); }
@@ -353,7 +353,7 @@ body.theme-playful .card-chrome svg { width:29px; height:29px; }
 body.theme-playful .brand-mark { transform:rotate(-6deg); border:2px solid var(--text-primary); box-shadow:3px 3px var(--accent-secondary); }
 
 /* 17: layered romance along page edges and card chrome, with no image overlays. */
-body.theme-love { --radius:18px; --heading-font:'Playfair Display',Georgia,serif; --gallery-gap:27px; background-image:radial-gradient(ellipse at 0 8%,color-mix(in srgb,var(--accent-primary) 13%,transparent),transparent 38%),radial-gradient(ellipse at 100% 50%,color-mix(in srgb,var(--accent-secondary) 11%,transparent),transparent 40%),radial-gradient(color-mix(in srgb,var(--accent-secondary) 20%,transparent) .8px,transparent 1px); background-size:auto,auto,25px 25px; }
+body.theme-love { --radius:18px; --heading-font:'Playfair Display',Georgia,serif; --gallery-gap:27px; }
 body.theme-love .container { max-width:1480px; }
 body.theme-love header h1 { font-size:clamp(2.2rem,4vw,4rem); font-weight:500; }
 body.theme-love header { border-bottom-style:double; border-bottom-width:3px; }
@@ -462,6 +462,8 @@ body.theme-love .section-title::after { content:''; margin-left:12px; width:40px
 @media(prefers-reduced-motion:reduce) {
     .theme-choice,body:not(.theme-current) *,body:not(.theme-current) *::before,body:not(.theme-current) *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 }
+
+
 /* Preserve hidden admin controls regardless of a theme's display/layout rules. */
 [hidden] { display:none!important; }
 
@@ -528,7 +530,7 @@ body.theme-dashboard .search-filter-bar { box-shadow:inset 0 1px #fff,0 6px 14px
 body.theme-dashboard .media-card { border-top:3px solid #116b65; }
 
 /* Japanese Minimal: layered washi, soft ink shadows and restrained vermilion. */
-body.theme-japanese { background-image:radial-gradient(circle at 88% 8%,#c24a3421 0 45px,transparent 46px),radial-gradient(ellipse at 4% 46%,#83917719 0 2px,transparent 3px),linear-gradient(135deg,#f9f7ef,#f0eee5); }
+body.theme-japanese { background-image:radial-gradient(circle at 88% 8%,#c24a3421 0 45px,transparent 46px),linear-gradient(135deg,#f9f7ef,#f0eee5); }
 body.theme-japanese .theme-art { filter:drop-shadow(0 3px 2px #312d201e); }
 body.theme-japanese .upload-zone { border-color:#c9c5b6; box-shadow:inset 0 1px #fff,0 5px 0 #a7a08b27,0 12px 20px #3433270c; }
 body.theme-japanese .media-card { background:linear-gradient(150deg,#fffef9,#f7f4e9); box-shadow:2px 6px 0 #79715b20,0 13px 18px #40392912; }
@@ -536,7 +538,7 @@ body.theme-japanese .media-thumbnail { border:1px solid #e5e0d2; }
 body.theme-japanese .media-name { text-shadow:0 1px #fff; }
 
 /* Neon Cyber: recessed circuit grid, anodized edges, measured cyan bloom. */
-body.theme-neon { background-image:linear-gradient(#70eee30c 1px,transparent 1px),linear-gradient(90deg,#70eee30c 1px,transparent 1px),radial-gradient(ellipse at 48% -12%,#823d9d28,transparent 43%),linear-gradient(145deg,#080c14,#101522); background-size:28px 28px,28px 28px,auto,auto; }
+body.theme-neon { background-image:radial-gradient(ellipse at 48% -12%,#823d9d38,transparent 43%),radial-gradient(ellipse at 0 70%,#16757b20,transparent 34%),linear-gradient(145deg,#080c14,#101522); }
 body.theme-neon .media-card { background:linear-gradient(145deg,#17222e,#0c141f); box-shadow:inset 0 1px #70eee328,inset 0 -1px #02040a,0 9px 17px #03060ca6; clip-path:inset(0 round var(--radius)); }
 body.theme-neon .media-card:hover { box-shadow:inset 0 1px #70eee36b,0 13px 24px #03060ce0,0 0 11px #70eee31b; }
 body.theme-neon .media-thumbnail { outline:1px solid #70eee338; outline-offset:-1px; }
@@ -544,7 +546,7 @@ body.theme-neon .upload-zone { background:linear-gradient(135deg,#172535,#17142a
 body.theme-neon :is(.search-filter-bar,.stat-item,.admin-panel) { box-shadow:inset 0 1px #a18bff1f,0 9px 19px #03050a80; }
 
 /* Classic Photobooth: silver gelatin prints and tactile strip rails. */
-body.theme-photobooth { background-image:radial-gradient(#625a4e12 .7px,transparent 1px),linear-gradient(140deg,#eeeae0,#d8d5ce); background-size:5px 5px,auto; }
+body.theme-photobooth { background-image:linear-gradient(140deg,#eeeae0,#d8d5ce); }
 body.theme-photobooth .photo-strip { position:relative; background:linear-gradient(90deg,#242321,#393632 7%,#f4f1e9 7% 93%,#393632 93%,#242321); box-shadow:inset 0 1px #ffffff3b,6px 9px 0 #24211c26,0 17px 25px #221f1a1a; }
 body.theme-photobooth .photo-strip::before { border-bottom:1px dashed #ac9c81; }
 body.theme-photobooth .media-thumbnail { background:#111; box-shadow:inset 0 0 0 1px #bcb8ae,0 3px 8px #13121046; }
@@ -795,3 +797,52 @@ body.theme-love[data-theme="light"] .theme-choice-name { color:#3e2946; }
     body.theme-love .atmosphere-heart,body.theme-love .atmosphere-petal,body.theme-love .art-love .love-ribbon-highlight,body.theme-love .love-crystal-large { animation:none!important; }
     body.theme-love .media-card,body.theme-love .media-card:hover,body.theme-love :is(.login-trigger,.logout-btn,.refresh-btn,.clear-filters,.media-action-btn,.theme-picker-trigger) { transform:none!important; }
 }
+
+/* Illustrated theme backdrops replace the old repeated dot wallpaper. */
+.theme-backdrop { display:none; }
+body:not(.theme-current) .theme-backdrop { display:block; position:fixed; z-index:0; inset:0; width:100%; height:100%; overflow:hidden; pointer-events:none; opacity:.78; }
+body:not(.theme-current) .container { position:relative; z-index:1; }
+.theme-backdrop g { display:none; fill:none; stroke:currentColor; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+.theme-backdrop .backdrop-light { stroke:#4c83cc; opacity:.2; }
+.theme-backdrop .backdrop-dark { stroke:#9a8cf5; opacity:.2; }
+.theme-backdrop .backdrop-pinterest { stroke:#b64136; stroke-width:8; opacity:.18; }
+.theme-backdrop .backdrop-studio { stroke:#c46335; stroke-width:9; opacity:.2; }
+.theme-backdrop .backdrop-glass { stroke:#fff; stroke-width:2; opacity:.18; fill:#b9aaff; fill-opacity:.08; }
+.theme-backdrop .backdrop-dashboard { stroke:#2a7882; stroke-width:3; opacity:.15; fill:#6caeae; fill-opacity:.055; }
+.theme-backdrop .backdrop-japanese { stroke:#4d5545; stroke-width:5; opacity:.2; }
+.theme-backdrop .backdrop-japanese circle { fill:#bc4b3d; fill-opacity:.13; stroke:#b44739; stroke-width:2; }
+.theme-backdrop .backdrop-neon { stroke:#62ede2; stroke-width:5; opacity:.25; filter:drop-shadow(0 0 9px #46d9e8); }
+.theme-backdrop .backdrop-photobooth { stroke:#48443d; stroke-width:3; opacity:.13; fill:#fff; fill-opacity:.06; }
+.theme-backdrop .backdrop-polaroid { stroke:#95734e; stroke-width:4; opacity:.18; fill:#fff8e8; fill-opacity:.26; }
+.theme-backdrop .backdrop-scrapbook { stroke:#65734d; stroke-width:6; opacity:.2; }
+.theme-backdrop .backdrop-film { stroke:#634f33; stroke-width:4; opacity:.17; fill:#493f2b; fill-opacity:.06; }
+.theme-backdrop .backdrop-instant { stroke:#ad769f; stroke-width:5; opacity:.18; fill:#fff; fill-opacity:.2; }
+.theme-backdrop .backdrop-darkroom { stroke:#d27868; stroke-width:4; opacity:.18; fill:#e85d4d; fill-opacity:.045; }
+.theme-backdrop .backdrop-digital { stroke:#b6ddb9; stroke-width:4; opacity:.18; fill:#b6ddb9; fill-opacity:.05; }
+.theme-backdrop .backdrop-playful { stroke:#895bb5; stroke-width:5; opacity:.21; fill:#f2a3a9; fill-opacity:.12; }
+.theme-backdrop .backdrop-love { stroke:#ff84ce; stroke-width:7; opacity:.24; filter:drop-shadow(0 0 10px #e85bab); }
+.theme-backdrop .backdrop-love use { stroke:none; filter:drop-shadow(0 8px 12px #10071988); }
+body.theme-light-minimal .backdrop-light,body.theme-dark-minimal .backdrop-dark,body.theme-pinterest .backdrop-pinterest,body.theme-studio .backdrop-studio,body.theme-glass .backdrop-glass,body.theme-dashboard .backdrop-dashboard,body.theme-japanese .backdrop-japanese,body.theme-neon .backdrop-neon,body.theme-photobooth .backdrop-photobooth,body.theme-polaroid .backdrop-polaroid,body.theme-scrapbook .backdrop-scrapbook,body.theme-film-lab .backdrop-film,body.theme-instant .backdrop-instant,body.theme-darkroom .backdrop-darkroom,body.theme-digital .backdrop-digital,body.theme-playful .backdrop-playful,body.theme-love .backdrop-love { display:block; }
+body.theme-light-minimal { background-image:linear-gradient(135deg,#ffffff 0%,#f5f8fc 60%,#eef4fb 100%); }
+body.theme-dark-minimal { background-image:radial-gradient(ellipse at 15% 4%,#8c77d51e,transparent 35%),linear-gradient(145deg,#17181d,#20212b 58%,#171a22); }
+body.theme-pinterest { background-image:radial-gradient(ellipse at 12% 10%,#cf755118,transparent 30%),radial-gradient(ellipse at 92% 86%,#b68b6c20,transparent 34%),linear-gradient(140deg,#fffdfa,#f6f0e9); }
+body.theme-studio { background-image:radial-gradient(ellipse at 0 18%,#d4673d30,transparent 36%),radial-gradient(ellipse at 94% 92%,#dfae5c30,transparent 30%),linear-gradient(125deg,#f8efe0,#f1e4d1 65%,#ede0ce); }
+body.theme-glass { background-image:radial-gradient(ellipse at 8% 10%,#778bee66,transparent 45%),radial-gradient(ellipse at 90% 74%,#d16dae54,transparent 45%),linear-gradient(140deg,#e7eafa,#dfe5fa 48%,#f1e0f1); }
+body.theme-dashboard { background-image:linear-gradient(120deg,#f0f4f7,#f7fafb 48%,#e9f2f4); }
+body.theme-japanese { background-image:radial-gradient(circle at 88% 8%,#c24a3421 0 72px,transparent 73px),linear-gradient(135deg,#f9f7ef,#f0eee5); }
+body.theme-neon { background-image:radial-gradient(ellipse at 48% -12%,#823d9d38,transparent 43%),radial-gradient(ellipse at 0 70%,#16757b20,transparent 34%),linear-gradient(145deg,#080c14,#101522); }
+body.theme-photobooth { background-image:linear-gradient(140deg,#eeeae0,#d8d5ce); }
+body.theme-polaroid { background-image:radial-gradient(ellipse at 5% 8%,#e7a8a238,transparent 32%),radial-gradient(ellipse at 95% 90%,#9dafae3b,transparent 34%),linear-gradient(135deg,#f2ede3,#e6dfd1); }
+body.theme-scrapbook { background-image:radial-gradient(ellipse at 4% 16%,#9c543f20,transparent 33%),radial-gradient(ellipse at 96% 83%,#5965441f,transparent 34%),linear-gradient(135deg,#ece3ca,#e4d8bc 55%,#eee5d1); }
+body.theme-film-lab { background-image:radial-gradient(ellipse at 12% 8%,#b17c3e24,transparent 28%),linear-gradient(140deg,#ddd0ad,#cbbd98 58%,#e4d7b7); }
+body.theme-instant { background-image:radial-gradient(ellipse at 8% 10%,#f0b9d34b,transparent 29%),radial-gradient(ellipse at 92% 88%,#a9d8ca52,transparent 32%),linear-gradient(135deg,#f6f5ef,#eee9f3); }
+body.theme-darkroom { background-image:radial-gradient(ellipse at 52% 0,#bd574044,transparent 46%),radial-gradient(ellipse at 0 88%,#243b514a,transparent 38%),linear-gradient(145deg,#0b121b,#17232e); }
+body.theme-digital { background-image:radial-gradient(ellipse at 100% 0,#77ac8e22,transparent 35%),linear-gradient(145deg,#151d20,#203035 58%,#172325); }
+body.theme-playful { background-image:radial-gradient(ellipse at 8% 12%,#f0a9bd40,transparent 28%),radial-gradient(ellipse at 92% 25%,#a9a1e346,transparent 30%),radial-gradient(ellipse at 72% 95%,#efd78a40,transparent 32%),linear-gradient(135deg,#fff5e9,#fbeaf0); }
+body.theme-love { background-image:radial-gradient(ellipse at 13% 3%,#b73f9a58 0,transparent 30%),radial-gradient(ellipse at 88% 19%,#6442ac50 0,transparent 32%),radial-gradient(ellipse at 72% 78%,#a82d6e25 0,transparent 37%),radial-gradient(ellipse at 45% 100%,#43317a55 0,transparent 44%),linear-gradient(135deg,#130a20 0%,#21102d 43%,#170d27 72%,#260e28 100%); }
+@media(max-width:760px) {
+    body:not(.theme-current) .theme-backdrop { opacity:.44; }
+    .theme-backdrop .backdrop-dashboard,.theme-backdrop .backdrop-photobooth,.theme-backdrop .backdrop-film { opacity:.08; }
+    .theme-backdrop .backdrop-neon,.theme-backdrop .backdrop-love { filter:none; }
+}
+@media(prefers-reduced-motion:reduce) { body:not(.theme-current) .theme-backdrop * { animation:none!important; } }
