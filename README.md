@@ -72,6 +72,18 @@ Manifest chỉ chứa tên album, thời gian tạo và public ID của media v�
 - Trang quản trị lấy hạn mức dung lượng từ Cloudinary Admin API nếu API trả về dữ liệu hợp lệ; nếu không, giao diện ghi rõ không khả dụng, không tự ước lượng.
 - Tệp có nút liên kết công khai và tải về. Tệp tải về qua endpoint ứng dụng để đặt tên tệp dễ hiểu.
 
+## Giao diện cá nhân
+
+Nút **Themes** mở 18 lựa chọn, chia thành các nhóm thiết kế gốc, tối giản, sáng tạo, kỷ niệm và đặc biệt. Mỗi lựa chọn có preview, mô tả và dấu đang chọn. Dùng Tab để di chuyển, Enter/Space để chọn, phím mũi tên/Home/End để duyệt các thẻ; Escape hoặc nút đóng để thoát. **Reset to Current design** đưa về giao diện gốc.
+
+- `index.html`: giữ CSS gốc, tích hợp bộ chọn, các SVG tự vẽ và bố cục dải Photobooth bằng chính các thẻ media hiện có.
+- `themes.css`: bố cục và chi tiết riêng cho từng theme; giảm họa tiết trên điện thoại, giữ focus rõ và tôn trọng `prefers-reduced-motion`.
+- `themes.js`: đọc lựa chọn trước khi nội dung trang xuất hiện; lưu theme và chế độ sáng/tối riêng từng theme trong localStorage. Không gọi API hoặc lưu thông tin đăng nhập.
+
+Các khóa trình duyệt là `media-gallery-gallery-theme`, `media-gallery-theme` và `media-gallery-theme-modes`. Không cần thêm biến môi trường hoặc thư viện ứng dụng. Pinterest dùng CSS columns với tỷ lệ ảnh gốc; Classic Photobooth gom 3–4 tệp mỗi dải khi đủ tệp, dải cuối có thể ít hơn. Bộ lọc và thao tác với tệp vẫn dùng dữ liệu API hiện có.
+
+Để kiểm tra bằng mắt, chạy `npm start`, mở trang ở kích thước desktop và điện thoại, so sánh Pinterest, Dashboard, Scrapbook, Polaroid, Neon Cyber và Dreamy Love. Thử đổi theme trong lúc upload, tải lại trang, mở viewer, trở về Current design và kiểm tra đăng xuất. Các kiểm tra DOM/CSS tự động không thay thế việc kiểm tra hiển thị thực tế hoặc upload lên Cloudinary.
+
 ## API
 
 - `GET /api/media`, `GET /api/albums`, `GET /api/media/:publicId/download`: công khai.
