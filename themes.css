@@ -803,25 +803,61 @@ body.theme-love[data-theme="light"] .theme-choice-name { color:#3e2946; }
 body:not(.theme-current) .theme-backdrop { display:block; position:fixed; z-index:0; inset:0; width:100%; height:100%; overflow:hidden; pointer-events:none; opacity:.78; }
 body:not(.theme-current) .container { position:relative; z-index:1; }
 .theme-backdrop g { display:none; fill:none; stroke:currentColor; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
-.theme-backdrop .backdrop-light { stroke:#4c83cc; opacity:.2; }
-.theme-backdrop .backdrop-dark { stroke:#9a8cf5; opacity:.2; }
-.theme-backdrop .backdrop-pinterest { stroke:#b64136; stroke-width:8; opacity:.18; }
-.theme-backdrop .backdrop-studio { stroke:#c46335; stroke-width:9; opacity:.2; }
-.theme-backdrop .backdrop-glass { stroke:#fff; stroke-width:2; opacity:.18; fill:#b9aaff; fill-opacity:.08; }
-.theme-backdrop .backdrop-dashboard { stroke:#2a7882; stroke-width:3; opacity:.15; fill:#6caeae; fill-opacity:.055; }
-.theme-backdrop .backdrop-japanese { stroke:#4d5545; stroke-width:5; opacity:.2; }
+.theme-backdrop .backdrop-light { stroke:#4c83cc; opacity:.24; }
+.theme-backdrop .backdrop-dark { stroke:#9a8cf5; opacity:.27; }
+.theme-backdrop .backdrop-pinterest { stroke:#b64136; stroke-width:10; opacity:.33; }
+.theme-backdrop .backdrop-studio { stroke:#c46335; stroke-width:12; opacity:.32; }
+.theme-backdrop .backdrop-glass { stroke:#fff; stroke-width:3; opacity:.25; fill:#b9aaff; fill-opacity:.1; }
+.theme-backdrop .backdrop-dashboard { stroke:#2a7882; stroke-width:4; opacity:.23; fill:#6caeae; fill-opacity:.08; }
+.theme-backdrop .backdrop-japanese { stroke:#4d5545; stroke-width:7; opacity:.29; }
 .theme-backdrop .backdrop-japanese circle { fill:#bc4b3d; fill-opacity:.13; stroke:#b44739; stroke-width:2; }
-.theme-backdrop .backdrop-neon { stroke:#62ede2; stroke-width:5; opacity:.25; filter:drop-shadow(0 0 9px #46d9e8); }
-.theme-backdrop .backdrop-photobooth { stroke:#48443d; stroke-width:3; opacity:.13; fill:#fff; fill-opacity:.06; }
-.theme-backdrop .backdrop-polaroid { stroke:#95734e; stroke-width:4; opacity:.18; fill:#fff8e8; fill-opacity:.26; }
-.theme-backdrop .backdrop-scrapbook { stroke:#65734d; stroke-width:6; opacity:.2; }
-.theme-backdrop .backdrop-film { stroke:#634f33; stroke-width:4; opacity:.17; fill:#493f2b; fill-opacity:.06; }
-.theme-backdrop .backdrop-instant { stroke:#ad769f; stroke-width:5; opacity:.18; fill:#fff; fill-opacity:.2; }
-.theme-backdrop .backdrop-darkroom { stroke:#d27868; stroke-width:4; opacity:.18; fill:#e85d4d; fill-opacity:.045; }
-.theme-backdrop .backdrop-digital { stroke:#b6ddb9; stroke-width:4; opacity:.18; fill:#b6ddb9; fill-opacity:.05; }
-.theme-backdrop .backdrop-playful { stroke:#895bb5; stroke-width:5; opacity:.21; fill:#f2a3a9; fill-opacity:.12; }
-.theme-backdrop .backdrop-love { stroke:#ff84ce; stroke-width:7; opacity:.24; filter:drop-shadow(0 0 10px #e85bab); }
+.theme-backdrop .backdrop-neon { stroke:#62ede2; stroke-width:7; opacity:.36; filter:drop-shadow(0 0 11px #46d9e8); }
+.theme-backdrop .backdrop-photobooth { stroke:#48443d; stroke-width:5; opacity:.25; fill:#fff; fill-opacity:.09; }
+.theme-backdrop .backdrop-polaroid { stroke:#95734e; stroke-width:6; opacity:.28; fill:#fff8e8; fill-opacity:.31; }
+.theme-backdrop .backdrop-scrapbook { stroke:#65734d; stroke-width:8; opacity:.32; }
+.theme-backdrop .backdrop-film { stroke:#634f33; stroke-width:6; opacity:.27; fill:#493f2b; fill-opacity:.1; }
+.theme-backdrop .backdrop-instant { stroke:#ad769f; stroke-width:7; opacity:.29; fill:#fff; fill-opacity:.25; }
+.theme-backdrop .backdrop-darkroom { stroke:#d27868; stroke-width:6; opacity:.28; fill:#e85d4d; fill-opacity:.07; }
+.theme-backdrop .backdrop-digital { stroke:#b6ddb9; stroke-width:6; opacity:.26; fill:#b6ddb9; fill-opacity:.08; }
+.theme-backdrop .backdrop-playful { stroke:#895bb5; stroke-width:8; opacity:.31; fill:#f2a3a9; fill-opacity:.17; }
+.theme-backdrop .backdrop-love { stroke:#ff84ce; stroke-width:10; opacity:.43; filter:drop-shadow(0 0 12px #e85bab); }
 .theme-backdrop .backdrop-love use { stroke:none; filter:drop-shadow(0 8px 12px #10071988); }
+.theme-backdrop .mural-shadow { stroke:#241d32; stroke-width:26; opacity:.5; fill:none; transform:translate(9px,11px); }
+.theme-backdrop .mural-fill { stroke:#251b32; stroke-width:11; opacity:.82; fill:#e77852; fill-opacity:.64; filter:drop-shadow(0 9px 7px #1118); }
+.theme-backdrop .mural-accent { stroke:#f6bd4c; stroke-width:10; opacity:.88; fill:none; }
+.theme-backdrop .mural-highlight { stroke:#fff3d1; stroke-width:3.5; opacity:.86; fill:none; }
+.theme-backdrop .backdrop-light .mural-shadow { stroke:#397cc2; }
+.theme-backdrop .backdrop-light .mural-accent { stroke:#3aaec1; }
+.theme-backdrop .backdrop-light .mural-highlight { stroke:#fff; }
+.theme-backdrop .backdrop-dark .mural-shadow { stroke:#28243f; }
+.theme-backdrop .backdrop-dark .mural-accent { stroke:#bd8bff; }
+.theme-backdrop .backdrop-dark .mural-highlight { stroke:#d7d5ff; }
+.theme-backdrop .backdrop-pinterest .mural-shadow { stroke:#613a38; }
+.theme-backdrop .backdrop-pinterest .mural-accent { stroke:#df8c52; }
+.theme-backdrop .backdrop-pinterest .mural-highlight { stroke:#fff1d8; }
+.theme-backdrop .backdrop-studio .mural-shadow { stroke:#70402f; }
+.theme-backdrop .backdrop-studio .mural-fill { fill:#df7437; }
+.theme-backdrop .backdrop-studio .mural-accent { stroke:#e7a83d; }
+.theme-backdrop .backdrop-japanese .mural-shadow { stroke:#77715f; stroke-width:18; opacity:.22; }
+.theme-backdrop .backdrop-japanese .mural-accent { stroke:#ad3d32; stroke-width:3; }
+.theme-backdrop .backdrop-japanese .mural-highlight { stroke:#f8f4e8; }
+.theme-backdrop .backdrop-japanese .mural-sun { fill:#bf4939; fill-opacity:.12; stroke:#ad3d32; stroke-width:2; }
+.theme-backdrop .backdrop-neon .mural-shadow { stroke:#7f31bf; stroke-width:35; }
+.theme-backdrop .backdrop-neon .mural-fill { stroke:#161326; fill:#bb3ef0; fill-opacity:.32; }
+.theme-backdrop .backdrop-neon .mural-accent { stroke:#ff4dce; stroke-width:8; }
+.theme-backdrop .backdrop-neon .mural-highlight { stroke:#baffff; stroke-width:3; }
+.theme-backdrop .backdrop-photobooth .mural-shadow { stroke:#35312b; stroke-width:16; }
+.theme-backdrop .backdrop-photobooth .mural-fill { fill:#faf8f1; stroke:#282723; stroke-width:7; }
+.theme-backdrop .backdrop-photobooth .mural-accent { stroke:#8f4552; stroke-width:3; }
+.theme-backdrop .backdrop-scrapbook .mural-shadow { stroke:#8b684f; stroke-width:23; }
+.theme-backdrop .backdrop-scrapbook .mural-fill { fill:#e7d2a7; stroke:#754e3b; stroke-width:5; }
+.theme-backdrop .backdrop-scrapbook .mural-accent { stroke:#b74f3d; stroke-width:6; }
+.theme-backdrop .backdrop-scrapbook .mural-highlight { stroke:#f8edcf; stroke-width:4; }
+.theme-backdrop .backdrop-love .mural-shadow { stroke:#492344; stroke-width:38; opacity:.56; }
+.theme-backdrop .backdrop-love .mural-ribbon { stroke:#ed4ca8; stroke-width:25; opacity:.92; filter:drop-shadow(0 10px 7px #0c0618); }
+.theme-backdrop .backdrop-love .mural-highlight { stroke:#fff0fb; stroke-width:4; }
+.theme-backdrop .backdrop-love .mural-outline { stroke:#ffd1ec; stroke-width:6; fill:#f045aa; fill-opacity:.15; }
+.theme-backdrop .backdrop-love .mural-accent { stroke:#ffb3dc; stroke-width:4; fill:#ff6dbb; fill-opacity:.6; }
 body.theme-light-minimal .backdrop-light,body.theme-dark-minimal .backdrop-dark,body.theme-pinterest .backdrop-pinterest,body.theme-studio .backdrop-studio,body.theme-glass .backdrop-glass,body.theme-dashboard .backdrop-dashboard,body.theme-japanese .backdrop-japanese,body.theme-neon .backdrop-neon,body.theme-photobooth .backdrop-photobooth,body.theme-polaroid .backdrop-polaroid,body.theme-scrapbook .backdrop-scrapbook,body.theme-film-lab .backdrop-film,body.theme-instant .backdrop-instant,body.theme-darkroom .backdrop-darkroom,body.theme-digital .backdrop-digital,body.theme-playful .backdrop-playful,body.theme-love .backdrop-love { display:block; }
 body.theme-light-minimal { background-image:linear-gradient(135deg,#ffffff 0%,#f5f8fc 60%,#eef4fb 100%); }
 body.theme-dark-minimal { background-image:radial-gradient(ellipse at 15% 4%,#8c77d51e,transparent 35%),linear-gradient(145deg,#17181d,#20212b 58%,#171a22); }
@@ -842,6 +878,8 @@ body.theme-playful { background-image:radial-gradient(ellipse at 8% 12%,#f0a9bd4
 body.theme-love { background-image:radial-gradient(ellipse at 13% 3%,#b73f9a58 0,transparent 30%),radial-gradient(ellipse at 88% 19%,#6442ac50 0,transparent 32%),radial-gradient(ellipse at 72% 78%,#a82d6e25 0,transparent 37%),radial-gradient(ellipse at 45% 100%,#43317a55 0,transparent 44%),linear-gradient(135deg,#130a20 0%,#21102d 43%,#170d27 72%,#260e28 100%); }
 @media(max-width:760px) {
     body:not(.theme-current) .theme-backdrop { opacity:.44; }
+    .theme-backdrop .mural-shadow,.theme-backdrop .mural-highlight,.theme-backdrop .mural-outline,.theme-backdrop .mural-fill,.theme-backdrop rect,.theme-backdrop circle,.theme-backdrop use { display:none; }
+    .theme-backdrop .backdrop-love .mural-ribbon { stroke-width:12; }
     .theme-backdrop .backdrop-dashboard,.theme-backdrop .backdrop-photobooth,.theme-backdrop .backdrop-film { opacity:.08; }
     .theme-backdrop .backdrop-neon,.theme-backdrop .backdrop-love { filter:none; }
 }
