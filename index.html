@@ -1074,6 +1074,16 @@
         <symbol id="mark-geometry" viewBox="0 0 32 32"><circle cx="11" cy="11" r="7"/><path d="M17 17h11v11H17zM3 28l8-9 4 9z"/></symbol>
         <symbol id="mark-star" viewBox="0 0 32 32"><path d="m16 3 4 9 10 1-8 7 2 10-8-5-9 5 2-10-8-7 11-1zM25 3l3 4M3 5l3 3"/></symbol>
         <symbol id="mark-heart" viewBox="0 0 32 32"><path d="M16 27S2 18 2 10c0-8 11-10 14-2 3-8 14-6 14 2 0 8-14 17-14 17Z"/><path d="m7 11 2-3M24 20l2 2"/></symbol>
+        <linearGradient id="love-crystal-face" x1=".15" y1=".12" x2=".82" y2=".94"><stop stop-color="#fff4ff"/><stop offset=".18" stop-color="#ffaddc"/><stop offset=".43" stop-color="#fb4fae"/><stop offset=".72" stop-color="#aa2b85"/><stop offset="1" stop-color="#4b286f"/></linearGradient>
+        <linearGradient id="love-crystal-edge" x1=".12" y1="0" x2=".82" y2="1"><stop stop-color="#fff" stop-opacity=".96"/><stop offset=".25" stop-color="#ffd7f2" stop-opacity=".82"/><stop offset=".63" stop-color="#ff83ca" stop-opacity=".55"/><stop offset="1" stop-color="#b94da9" stop-opacity=".94"/></linearGradient>
+        <radialGradient id="love-crystal-glint" cx=".25" cy=".18" r=".76"><stop stop-color="#fff" stop-opacity=".94"/><stop offset=".18" stop-color="#ffe7f7" stop-opacity=".56"/><stop offset=".5" stop-color="#ffb5e1" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="love-ribbon-light" x1="0" y1="0" x2="1" y2=".1"><stop stop-color="#ff9bdc" stop-opacity="0"/><stop offset=".2" stop-color="#ff8dda"/><stop offset=".49" stop-color="#fff4ff"/><stop offset=".74" stop-color="#ff61ba"/><stop offset="1" stop-color="#d78cff" stop-opacity="0"/></linearGradient>
+        <radialGradient id="love-petal-face" cx=".28" cy=".18"><stop stop-color="#fff2f8"/><stop offset=".38" stop-color="#ffb2d5"/><stop offset="1" stop-color="#d74894" stop-opacity=".88"/></radialGradient>
+        <filter id="love-crystal-shadow" x="-60%" y="-60%" width="220%" height="240%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="blur"/><feOffset dy="3" result="offset"/><feComponentTransfer><feFuncA type="linear" slope=".48"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="love-ribbon-bloom" x="-20%" y="-90%" width="140%" height="280%"><feGaussianBlur stdDeviation="3.2"/></filter>
+        <symbol id="mark-love-crystal" viewBox="0 0 32 32"><path d="M16 29 4.5 18C-1 12 3 3 10 4c3 .3 5 2.5 6 4.5C18 4 20 4 23 4c7-1 11 8 4.5 14Z" fill="#ef55ae" opacity=".4" transform="translate(1 1.4)"/><path d="M16 27S3 18 3 10c0-7 9-9 13-2 4-7 13-5 13 2 0 8-13 17-13 17Z" fill="url(#love-crystal-face)" stroke="url(#love-crystal-edge)" stroke-width="1.35"/><path d="M16 8v18M5.2 11.2l10.8 3.1 10.8-3.1M7.2 17.2 16 26l8.8-8.8" fill="none" stroke="#fff4ff" stroke-opacity=".3" stroke-width=".7"/><path d="M16 27S3 18 3 10c0-7 9-9 13-2 4-7 13-5 13 2 0 8-13 17-13 17Z" fill="url(#love-crystal-glint)"/><path d="M7 9c1.5-2 4.2-2.6 6-1.7M24.5 8.5c1.1.7 1.7 1.8 1.7 3" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.4" opacity=".9"/></symbol>
+        <symbol id="mark-love-spark" viewBox="0 0 32 32"><path d="M16 1.5 19.3 12.7 30.5 16 19.3 19.3 16 30.5 12.7 19.3 1.5 16 12.7 12.7Z" fill="#fff2d2" stroke="#fff" stroke-width=".8"/><circle cx="16" cy="16" r="3" fill="#fff"/></symbol>
+        <symbol id="mark-love-petal" viewBox="0 0 32 32"><path d="M16 29C9 21 2 14 6 7c3-5 11-4 13 1 7-2 11 5 6 11Z" fill="url(#love-petal-face)" stroke="#ffe3f4" stroke-opacity=".78" stroke-width=".8"/><path d="M8 9c4 3 8 8 11 15" fill="none" stroke="#fff" stroke-opacity=".57" stroke-width=".7"/></symbol>
         <symbol id="mark-flower" viewBox="0 0 32 32"><path d="M16 10C7-4 1 10 10 14-5 16 5 30 13 22c1 16 15 5 8-2 15 4 13-13 3-9 7-11-7-15-8-1Z"/><circle cx="16" cy="16" r="3"/></symbol>
         <symbol id="mark-branch" viewBox="0 0 32 32"><path d="M4 30 25 3M11 20C1 19 2 12 11 15M18 11C12 1 7 4 14 11M16 16c10 3 15-4 5-5M7 26c10 3 14-2 6-5"/></symbol>
         <symbol id="mark-bubble" viewBox="0 0 32 32"><path d="M6 4h20a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4h-9l-8 6v-6H6a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Z"/><path d="m17 7-6 8h6l-2 6 8-9h-6z"/></symbol>
@@ -1081,6 +1091,7 @@
         <symbol id="mark-drop" viewBox="0 0 32 32"><path d="M16 3S5 15 5 21a11 8 0 0 0 22 0C27 15 16 3 16 3Z"/><path d="M10 19c-2 4 0 6 3 6"/></symbol>
     </defs></svg>
 
+    <div class="love-atmosphere" aria-hidden="true"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"><use class="atmosphere-heart atmosphere-heart-back" href="#mark-love-crystal" x="110" y="130" width="132" height="132"/><use class="atmosphere-heart atmosphere-heart-mid" href="#mark-love-crystal" x="1160" y="300" width="92" height="92"/><use class="atmosphere-heart atmosphere-heart-front" href="#mark-love-crystal" x="980" y="710" width="156" height="156"/><use class="atmosphere-petal atmosphere-petal-back" href="#mark-love-petal" x="335" y="610" width="61" height="61"/><use class="atmosphere-petal atmosphere-petal-mid" href="#mark-love-petal" x="1040" y="125" width="47" height="47"/><use class="atmosphere-spark" href="#mark-love-spark" x="710" y="192" width="30" height="30"/><use class="atmosphere-spark" href="#mark-love-spark" x="1260" y="590" width="24" height="24"/><circle class="atmosphere-particle" cx="300" cy="342" r="2"/><circle class="atmosphere-particle" cx="835" cy="90" r="1.7"/><circle class="atmosphere-particle" cx="1350" cy="190" r="2.3"/><circle class="atmosphere-particle" cx="546" cy="790" r="1.8"/></svg></div>
     <div class="container">
         <header>
             <div class="header-copy">
@@ -1113,7 +1124,7 @@
             <g class="art-japanese"><circle cx="1010" cy="43" r="27" fill="currentColor" opacity=".15"/><path d="M60 93c19-40 58-46 126-62M113 58l3-38M148 45l32 15"/><use href="#mark-branch" x="138" y="2" width="65" height="65"/><path d="M590 65h100" opacity=".45"/></g>
             <g class="art-scrapbook"><path d="m35 60 25-33 22 38 16-42 30 41M1080 55c5-34 48-38 59-10s-38 33-35 3"/><rect x="340" y="25" width="125" height="43" transform="rotate(-7 340 25)" stroke-dasharray="3 4"/><use href="#mark-flower" x="860" y="18" width="53" height="53"/><path d="M359 43h62M359 51h47"/></g>
             <g class="art-playful"><use href="#mark-star" x="16" y="15" width="65" height="65"/><use href="#mark-bubble" x="280" y="9" width="78" height="78"/><use href="#mark-flower" x="790" y="10" width="65" height="65"/><use href="#mark-heart" x="1080" y="15" width="65" height="65"/><path d="m545 17 15 20-20 10 27 25" stroke-width="4"/></g>
-            <g class="art-love"><path d="M0 60C100-20 170 120 275 55S430 5 530 62s172-8 230-20 129 80 223 12 157-32 217 13" opacity=".4"/><use href="#mark-heart" x="35" y="6" width="49" height="49"/><use href="#mark-heart" x="1090" y="20" width="59" height="59"/><use href="#mark-flower" x="860" y="11" width="37" height="37"/><use href="#mark-branch" x="230" y="25" width="55" height="55"/><path d="M590 15v34m-17-17h34m-26-9 18 18m0-18-18 18"/><g class="extra-detail"><use href="#mark-heart" x="708" y="18" width="28" height="28"/><use href="#mark-star" x="947" y="62" width="24" height="24"/><path d="M140 25q24-7 8 17-15-3-8-17Zm326 39q-22 3-5 21 13-8 5-21Zm315 6q20-12 13 11-14 1-13-11ZM1021 20v14m-7-7h14"/><circle cx="400" cy="21" r="2"/><circle cx="657" cy="78" r="3"/><circle cx="174" cy="75" r="2"/><circle cx="1169" cy="13" r="3"/></g></g>
+            <g class="art-love"><path class="love-ribbon-shadow" d="M0 54C132 8 202 88 320 50S516 15 616 51s185 17 285-15 195-6 299 24"/><path class="love-ribbon" d="M0 54C132 8 202 88 320 50S516 15 616 51s185 17 285-15 195-6 299 24"/><path class="love-ribbon-highlight" d="M15 54C140 15 206 83 321 49S514 21 615 52s184 13 285-16 193-4 286 24"/><use class="love-crystal love-crystal-small" href="#mark-love-crystal" x="88" y="20" width="29" height="29"/><use class="love-crystal love-crystal-large" href="#mark-love-crystal" x="324" y="8" width="40" height="40"/><use class="love-crystal love-crystal-mid" href="#mark-love-crystal" x="717" y="25" width="31" height="31"/><use class="love-crystal love-crystal-small" href="#mark-love-crystal" x="1046" y="16" width="25" height="25"/><use class="love-petal love-petal-one" href="#mark-love-petal" x="210" y="37" width="19" height="19"/><use class="love-petal love-petal-two" href="#mark-love-petal" x="857" y="13" width="20" height="20"/><use class="love-spark" href="#mark-love-spark" x="531" y="8" width="15" height="15"/><use class="love-spark" href="#mark-love-spark" x="964" y="61" width="12" height="12"/><g class="extra-detail"><use class="love-crystal love-crystal-small" href="#mark-love-crystal" x="611" y="69" width="19" height="19"/><use class="love-spark" href="#mark-love-spark" x="171" y="8" width="11" height="11"/><use class="love-spark" href="#mark-love-spark" x="1144" y="30" width="14" height="14"/><circle class="love-particle" cx="270" cy="17" r="1.3"/><circle class="love-particle" cx="438" cy="80" r="1.7"/><circle class="love-particle" cx="789" cy="10" r="1.2"/><circle class="love-particle" cx="1000" cy="77" r="1.5"/></g></g>
         </svg>
 
         <div class="workspace-layout">
@@ -1263,7 +1274,7 @@
             <button type="button" id="closeThemePicker" aria-label="Đóng bảng chọn giao diện">×</button>
         </div>
         <div class="theme-choice-grid" id="themeChoiceGrid" aria-label="Các giao diện Media Gallery"></div>
-        <div class="theme-picker-footer"><span id="activeThemeLabel" aria-live="polite">Đang dùng: Current design</span><button id="resetGalleryTheme" type="button">Reset to Current design</button></div>
+        <div class="theme-picker-footer"><span id="activeThemeLabel" aria-live="polite">Đang dùng: Original</span><button id="resetGalleryTheme" type="button">Reset to Original</button></div>
     </dialog>
 
     <dialog class="login-dialog" id="loginDialog" aria-labelledby="loginTitle">
@@ -1521,7 +1532,7 @@
                     <h3 id="theme-category-${key}">${name}</h3>
                     <div class="theme-category-options">${galleryThemePresets.filter(p => p.category === key).map(preset => {
                         const palette = preset[preset.defaultMode];
-                        const motif = ({studio:'geometry',japanese:'branch',polaroid:'star',scrapbook:'flower',instant:'flower',playful:'bubble',love:'heart'})[preset.slug] || 'geometry';
+                        const motif = ({studio:'geometry',japanese:'branch',polaroid:'star',scrapbook:'flower',instant:'flower',playful:'bubble',love:'love-crystal'})[preset.slug] || 'geometry';
                         return `<button class="theme-choice" type="button" data-theme-choice="${preset.id}" aria-pressed="${selectedGalleryTheme === preset.id}" aria-label="${preset.name}. ${preset.description}">
                             <span class="theme-preview-art preview-${preset.slug}" aria-hidden="true" style="--pv-bg:${palette[0]};--pv-card:${palette[2]};--pv-accent:${palette[4]};--pv-ink:${palette[6]}">
                                 <span class="preview-heading"></span><span class="preview-nav"></span>
@@ -1542,7 +1553,7 @@
         function syncThemeLayout() {
             const cards = [...mediaGrid.querySelectorAll('.media-card')];
             cards.forEach((card, index) => {
-                const motif = ({'10':'star','11':'flower','13':'flower','14':'drop','15':'camera','16':index % 2 ? 'flower' : 'bubble','17':index % 3 === 2 ? 'flower' : 'heart'})[selectedGalleryTheme] || 'geometry';
+                const motif = ({'10':'star','11':'flower','13':'flower','14':'drop','15':'camera','16':index % 2 ? 'flower' : 'bubble','17':index % 3 === 2 ? 'love-petal' : 'love-crystal'})[selectedGalleryTheme] || 'geometry';
                 card.querySelector('.card-chrome use').setAttribute('href', `#mark-${motif}`);
                 const actions = card.querySelector('.media-actions');
                 const destination = card.querySelector(['0','3'].includes(selectedGalleryTheme) ? '.media-thumbnail' : '.card-footer');
