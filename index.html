@@ -847,6 +847,52 @@
             .format-badge { font-size:.72rem; padding:4px 8px; }
         }
         @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+        .theme-toggle { min-width:40px; padding:9px 11px; }
+        .admin-toolbar { display:flex; gap:9px; margin:0 0 15px; flex-wrap:wrap; }
+        .admin-toolbar button,.clear-filters { padding:9px 13px; border:1px solid var(--card-border); border-radius:10px; background:#202633; color:var(--text-primary); font:600 .82rem Inter,sans-serif; cursor:pointer; }
+        .admin-toolbar button:hover,.clear-filters:hover { border-color:var(--accent-primary); }
+        .date-filter { display:flex; gap:8px; }
+        .search-filter-bar .clear-filters { white-space:nowrap; }
+        .media-album { display:inline-block; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-top:8px; padding:3px 8px; border-radius:7px; color:#83e2cc; background:rgba(82,214,189,.1); font-size:.72rem; }
+        .media-admin-select { width:100%; margin-top:9px; padding:7px 9px; border:1px solid var(--card-border); border-radius:8px; color:var(--text-primary); background:#11151d; font:400 .78rem Inter,sans-serif; }
+        .favorite-btn { color:#d2d8e5; }
+        .favorite-btn.is-favorite { color:#ff8ca5; }
+        .lightbox-toolbar { position:absolute; top:18px; right:70px; display:flex; gap:8px; z-index:2; }
+        .lightbox-toolbar button,.lightbox-toolbar a { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:0 13px; gap:7px; color:white; text-decoration:none; background:rgba(35,42,55,.88); border:1px solid rgba(255,255,255,.17); border-radius:11px; cursor:pointer; font:600 .82rem Inter,sans-serif; }
+        .lightbox-toolbar button:hover,.lightbox-toolbar a:hover { background:#3b465b; }
+        .admin-panel { margin:0 0 26px; padding:20px; border:1px solid var(--card-border); border-radius:18px; background:var(--card-bg); }
+        .admin-panel h2 { font-size:1.1rem; margin-bottom:14px; }
+        .admin-stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+        .admin-stat { padding:14px; background:rgba(0,0,0,.13); border:1px solid var(--card-border); border-radius:12px; }
+        .admin-stat strong { display:block; font-size:1.12rem; }
+        .admin-stat span { color:var(--text-muted); font-size:.78rem; }
+        .cloudinary-usage { margin-top:13px; color:var(--text-muted); font-size:.85rem; }
+        .usage-track { height:8px; margin-top:7px; overflow:hidden; border-radius:999px; background:rgba(128,140,160,.2); }
+        .usage-fill { height:100%; width:0; background:linear-gradient(90deg,#56d7bb,#9dadff); transition:width .3s; }
+        .upload-limit-notice { margin-top:12px; padding:10px 12px; border-radius:10px; color:#ffe0a0; background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.25); font-size:.84rem; }
+        .toast.warning { border-color:var(--warning); }
+        .toast.warning svg { stroke:var(--warning); }
+        .album-list { display:grid; gap:8px; max-height:45vh; overflow:auto; margin-top:16px; }
+        .album-row { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 12px; background:#11151d; border:1px solid var(--card-border); border-radius:10px; }
+        .album-row-actions { display:flex; gap:6px; }
+        .album-row-actions button { padding:6px 9px; border:1px solid var(--card-border); border-radius:8px; color:var(--text-primary); background:#252c39; cursor:pointer; }
+        .album-create-form { display:flex; gap:8px; margin-top:16px; }
+        .album-create-form input { flex:1; min-width:0; }
+        .album-create-form button { padding:9px 13px; border:0; border-radius:9px; color:white; background:var(--accent-primary); font:600 .85rem Inter,sans-serif; cursor:pointer; }
+        body[data-theme="light"] { --bg-primary:#f2f5f9; --bg-secondary:#e8edf4; --card-bg:#fff; --card-border:#dce2eb; --text-primary:#202633; --text-muted:#667085; --danger:#c43143; background:radial-gradient(ellipse at 50% -18%,#dfe7f8 0,#f2f5f9 58%); color:var(--text-primary); }
+        body[data-theme="light"] header,body[data-theme="light"] .stat-item,body[data-theme="light"] .media-card,body[data-theme="light"] .admin-panel { background:#fff; }
+        body[data-theme="light"] .admin-badge,body[data-theme="light"] .login-trigger,body[data-theme="light"] .logout-btn,body[data-theme="light"] .admin-toolbar button,body[data-theme="light"] .clear-filters { color:#293244; background:#f2f5f9; }
+        body[data-theme="light"] .search-input,body[data-theme="light"] .filter-select,body[data-theme="light"] .media-admin-select,body[data-theme="light"] .album-row,body[data-theme="light"] .login-dialog { color:#202633; background:#fff; }
+        body[data-theme="light"] .media-type { color:#4856a5; background:#eef0ff; }
+        body[data-theme="light"] .share-input { color:#202633; background:#f5f7fa; }
+        body[data-theme="light"] .upload-zone { background:linear-gradient(135deg,#eef0ff,#e9faf5); }
+        body[data-theme="light"] .upload-zone .upload-title { color:#202633; }
+        body[data-theme="light"] .format-badge { color:#4856a5; background:#eef0ff; }
+        body[data-theme="light"] .admin-stat { background:#f7f8fb; }
+        body[data-theme="light"] .album-row-actions button,body[data-theme="light"] .login-form-actions button:not([type=submit]) { color:#202633; background:#eef1f6; }
+        body[data-theme="light"] .login-input { color:#202633; background:#f8fafc; border-color:#cfd6e1; }
+        body[data-theme="light"] .toast { color:#202633; background:white; }
+        @media(max-width:700px) { .admin-stat-grid { grid-template-columns:repeat(2,1fr); } .search-filter-bar .date-filter { flex-direction:row; } .date-filter input { min-width:0; width:50%; } .lightbox-toolbar { top:12px; right:60px; bottom:auto; transform:none; white-space:nowrap; } }
     </style>
 </head>
 <body>
@@ -867,6 +913,8 @@
                 <div class="admin-actions">
                     <span class="admin-badge" id="adminBadge"></span>
                     <button class="login-trigger" id="loginTrigger" type="button">Đăng nhập admin</button>
+                    <button class="login-trigger theme-toggle" id="themeToggle" type="button" aria-label="Chuyển giao diện sáng tối" title="Chuyển giao diện">☼</button>
+                    <button class="login-trigger admin-only" id="adminStatsToggle" type="button" hidden>Quản trị</button>
                     <button class="logout-btn" id="logoutButton" type="button" hidden>Đăng xuất</button>
                 </div>
             </div>
@@ -895,6 +943,7 @@
                 </div>
                 <h2 class="upload-title">Kéo thả file vào đây</h2>
                 <p class="upload-subtitle">hoặc nhấn để chọn file</p>
+                <p class="upload-subtitle">Giới hạn mỗi tệp: 100 MB</p>
                 <div class="upload-formats">
                     <span class="format-badge">JPG</span>
                     <span class="format-badge">PNG</span>
@@ -914,7 +963,7 @@
             <input type="file" id="fileInput" multiple accept="image/*,video/*">
         </div>
 
-        <div class="stats-bar" id="statsBar">
+        <div class="stats-bar admin-only" id="statsBar" hidden>
             <div class="stat-item">
                 <div class="stat-value" id="totalFiles">0</div>
                 <div class="stat-label">Tổng file</div>
@@ -932,6 +981,19 @@
                 <div class="stat-label">Tổng dung lượng</div>
             </div>
         </div>
+
+        <section class="admin-panel admin-only" id="adminPanel" aria-labelledby="adminPanelTitle" hidden>
+            <h2 id="adminPanelTitle">Thống kê quản trị</h2>
+            <div class="admin-stat-grid">
+                <div class="admin-stat"><strong id="adminImageCount">—</strong><span>Ảnh</span></div>
+                <div class="admin-stat"><strong id="adminVideoCount">—</strong><span>Video</span></div>
+                <div class="admin-stat"><strong id="adminTotalSize">—</strong><span>Tổng dung lượng thư viện</span></div>
+                <div class="admin-stat"><strong id="adminAlbumCount">—</strong><span>Album</span></div>
+            </div>
+            <div class="cloudinary-usage" id="cloudinaryUsageText">Dung lượng Cloudinary: đang tải...</div>
+            <div class="usage-track" id="cloudinaryUsageTrack" hidden><div class="usage-fill" id="cloudinaryUsageFill"></div></div>
+            <div class="upload-limit-notice">Ứng dụng giới hạn mỗi tệp ở 100 MB. Video trên 80 MB sẽ được cảnh báo trước khi tải lên.</div>
+        </section>
 
         <div class="section-header">
             <h2 class="section-title">
@@ -954,7 +1016,20 @@
                 <option value="all">Tất cả định dạng</option>
                 <option value="image">Chỉ ảnh</option>
                 <option value="video">Chỉ video</option>
+                <option value="favorite">Yêu thích</option>
             </select>
+            <select class="filter-select" id="albumFilter" aria-label="Lọc theo album">
+                <option value="all">Tất cả album</option>
+                <option value="none">Chưa xếp album</option>
+            </select>
+            <div class="date-filter">
+                <input class="search-input" id="dateFrom" type="date" aria-label="Từ ngày tải lên">
+                <input class="search-input" id="dateTo" type="date" aria-label="Đến ngày tải lên">
+            </div>
+            <button class="clear-filters" id="clearFilters" type="button">Xóa bộ lọc</button>
+        </div>
+        <div class="admin-toolbar admin-only" id="adminToolbar" hidden>
+            <button id="manageAlbumsButton" type="button">Quản lý album</button>
         </div>
 
         <div class="media-grid" id="mediaGrid">
@@ -988,6 +1063,19 @@
         </form>
     </dialog>
 
+    <dialog class="login-dialog" id="albumDialog" aria-labelledby="albumDialogTitle">
+        <div class="login-form">
+            <h2 id="albumDialogTitle">Quản lý album</h2>
+            <p class="login-hint">Xóa album chỉ bỏ liên kết, không xóa tệp media.</p>
+            <form class="album-create-form" id="albumCreateForm">
+                <input class="login-input" id="newAlbumName" maxlength="80" placeholder="Tên album mới" required>
+                <button type="submit">Tạo</button>
+            </form>
+            <div class="album-list" id="albumList"></div>
+            <div class="login-form-actions"><button type="button" id="closeAlbumDialog">Đóng</button></div>
+        </div>
+    </dialog>
+
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose">
@@ -1006,6 +1094,10 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
         </button>
+        <div class="lightbox-toolbar">
+            <button id="lightboxFavorite" type="button" aria-pressed="false">♡ Yêu thích</button>
+            <a id="downloadMediaButton" href="#" download>Tải tệp</a>
+        </div>
         <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
     </div>
 
@@ -1024,6 +1116,8 @@
         let currentLightboxIndex = 0;
         let isConnected = false;
         let isAdmin = false;
+        let albums = [];
+        let favoriteIds = new Set();
 
         // DOM Elements
         const uploadZone = document.getElementById('uploadZone');
@@ -1048,16 +1142,30 @@
         const loginDialog = document.getElementById('loginDialog');
         const loginForm = document.getElementById('loginForm');
         const loginError = document.getElementById('loginError');
+        const albumFilter = document.getElementById('albumFilter');
+        const dateFrom = document.getElementById('dateFrom');
+        const dateTo = document.getElementById('dateTo');
+        const albumDialog = document.getElementById('albumDialog');
 
         // Initialize
         document.getElementById('shareLink').value = window.location.href;
+        try {
+            favoriteIds = new Set(JSON.parse(localStorage.getItem('media-gallery-favorites') || '[]').filter(id => typeof id === 'string'));
+        } catch (error) {
+            favoriteIds = new Set();
+        }
+        let savedTheme = 'dark';
+        try { savedTheme = localStorage.getItem('media-gallery-theme') || 'dark'; } catch (error) { /* Storage may be disabled by the browser. */ }
+        applyTheme(savedTheme);
         checkConnection();
         checkAuthStatus();
         loadMedia();
+        loadAlbums();
         setInterval(checkAuthStatus, 60000);
 
         // Auto refresh every 10 seconds
         setInterval(loadMedia, 10000);
+        setInterval(loadAlbums, 60000);
 
         // Event Listeners
         uploadZone.addEventListener('click', () => fileInput.click());
@@ -1070,6 +1178,17 @@
         fileInput.addEventListener('change', handleFileSelect);
         searchInput.addEventListener('input', renderMediaGrid);
         mediaFilter.addEventListener('change', renderMediaGrid);
+        albumFilter.addEventListener('change', renderMediaGrid);
+        dateFrom.addEventListener('change', renderMediaGrid);
+        dateTo.addEventListener('change', renderMediaGrid);
+        document.getElementById('clearFilters').addEventListener('click', () => {
+            searchInput.value = '';
+            mediaFilter.value = 'all';
+            albumFilter.value = 'all';
+            dateFrom.value = '';
+            dateTo.value = '';
+            renderMediaGrid();
+        });
         document.getElementById('loginTrigger').addEventListener('click', () => {
             loginError.textContent = '';
             loginDialog.showModal();
@@ -1077,7 +1196,23 @@
         });
         document.getElementById('cancelLogin').addEventListener('click', () => loginDialog.close());
         document.getElementById('logoutButton').addEventListener('click', logoutAdmin);
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        document.getElementById('adminStatsToggle').addEventListener('click', () => {
+            const panel = document.getElementById('adminPanel');
+            panel.hidden = !panel.hidden;
+            if (!panel.hidden) loadAdminStats();
+        });
+        document.getElementById('manageAlbumsButton').addEventListener('click', () => {
+            renderAlbumManager();
+            albumDialog.showModal();
+        });
+        document.getElementById('closeAlbumDialog').addEventListener('click', () => albumDialog.close());
+        document.getElementById('albumCreateForm').addEventListener('submit', createAlbum);
         loginForm.addEventListener('submit', loginAdmin);
+        document.getElementById('lightboxFavorite').addEventListener('click', () => {
+            const item = visibleMediaFiles[currentLightboxIndex];
+            if (item) toggleFavorite(item);
+        });
         lightboxClose.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) closeLightbox();
@@ -1111,6 +1246,132 @@
                 });
         }
 
+        function applyTheme(theme) {
+            const selectedTheme = theme === 'light' ? 'light' : 'dark';
+            document.body.dataset.theme = selectedTheme;
+            const button = document.getElementById('themeToggle');
+            button.textContent = selectedTheme === 'dark' ? '☼' : '☾';
+            button.title = selectedTheme === 'dark' ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối';
+            button.setAttribute('aria-label', button.title);
+        }
+
+        function toggleTheme() {
+            const nextTheme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            try { localStorage.setItem('media-gallery-theme', nextTheme); } catch (error) { /* Theme still applies for this page view. */ }
+        }
+
+        async function loadAlbums() {
+            try {
+                const response = await fetch('/api/albums');
+                if (!response.ok) throw new Error('Album list unavailable');
+                albums = await response.json();
+                albumFilter.innerHTML = '<option value="all">Tất cả album</option><option value="none">Chưa xếp album</option>' +
+                    albums.map(album => `<option value="${escapeHtml(album.id)}">${escapeHtml(album.name)} (${album.count})</option>`).join('');
+                if (![...albumFilter.options].some(option => option.value === albumFilter.value)) albumFilter.value = 'all';
+                renderMediaGrid();
+            } catch (error) {
+                console.error('Failed to load albums:', error);
+            }
+        }
+
+        async function loadAdminStats() {
+            if (!isAdmin) return;
+            try {
+                const response = await fetch('/api/admin/stats');
+                if (response.status === 401) return handleAuthRequired();
+                if (!response.ok) throw new Error('Statistics unavailable');
+                const stats = await response.json();
+                document.getElementById('adminImageCount').textContent = stats.images;
+                document.getElementById('adminVideoCount').textContent = stats.videos;
+                document.getElementById('adminTotalSize').textContent = formatSize(stats.totalSizeBytes);
+                document.getElementById('adminAlbumCount').textContent = stats.albumCount;
+                const usageText = document.getElementById('cloudinaryUsageText');
+                const usageTrack = document.getElementById('cloudinaryUsageTrack');
+                const usage = stats.cloudinaryStorage;
+                if (usage && Number.isFinite(usage.usageBytes) && Number.isFinite(usage.limitBytes) && usage.limitBytes > 0) {
+                    usageText.textContent = `Dung lượng Cloudinary: ${formatSize(usage.usageBytes)} / ${formatSize(usage.limitBytes)} (${usage.usedPercent.toFixed(1)}%)`;
+                    usageTrack.hidden = false;
+                    document.getElementById('cloudinaryUsageFill').style.width = `${Math.min(100, Math.max(0, usage.usedPercent))}%`;
+                } else {
+                    usageText.textContent = 'Dung lượng Cloudinary: không khả dụng';
+                    usageTrack.hidden = true;
+                }
+            } catch (error) {
+                document.getElementById('cloudinaryUsageText').textContent = 'Không thể tải thống kê quản trị.';
+            }
+        }
+
+        async function createAlbum(event) {
+            event.preventDefault();
+            const input = document.getElementById('newAlbumName');
+            try {
+                const response = await fetch('/api/albums', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: input.value })
+                });
+                const result = await response.json();
+                if (response.status === 401) return handleAuthRequired();
+                if (!response.ok) return showToast(result.error || 'Không thể tạo album.', 'error');
+                input.value = '';
+                await Promise.all([loadAlbums(), loadAdminStats()]);
+                renderAlbumManager();
+                showToast('Đã tạo album.', 'success');
+            } catch (error) { showToast('Lỗi kết nối máy chủ.', 'error'); }
+        }
+
+        function renderAlbumManager() {
+            const list = document.getElementById('albumList');
+            if (albums.length === 0) {
+                list.innerHTML = '<p class="login-hint">Chưa có album nào.</p>';
+                return;
+            }
+            list.innerHTML = albums.map(album => `
+                <div class="album-row" data-album-id="${escapeHtml(album.id)}">
+                    <span>${escapeHtml(album.name)} <small>(${album.count})</small></span>
+                    <span class="album-row-actions">
+                        <button type="button" class="rename-album">Đổi tên</button>
+                        <button type="button" class="delete-album">Xóa</button>
+                    </span>
+                </div>`).join('');
+            list.querySelectorAll('.rename-album').forEach(button => button.addEventListener('click', () => {
+                const album = albums.find(item => item.id === button.closest('.album-row').dataset.albumId);
+                const name = prompt('Tên mới cho album:', album.name);
+                if (name !== null) renameAlbum(album.id, name);
+            }));
+            list.querySelectorAll('.delete-album').forEach(button => button.addEventListener('click', () => {
+                const album = albums.find(item => item.id === button.closest('.album-row').dataset.albumId);
+                if (confirm(`Xóa album “${album.name}”? Các tệp media vẫn được giữ nguyên.`)) deleteAlbum(album.id);
+            }));
+        }
+
+        async function renameAlbum(id, name) {
+            try {
+                const response = await fetch(`/api/albums/${encodeURIComponent(id)}`, {
+                    method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name })
+                });
+                const result = await response.json();
+                if (response.status === 401) return handleAuthRequired();
+                if (!response.ok) return showToast(result.error || 'Không thể đổi tên album.', 'error');
+                await Promise.all([loadAlbums(), loadMedia(), loadAdminStats()]);
+                renderAlbumManager();
+                showToast('Đã đổi tên album.', 'success');
+            } catch (error) { showToast('Lỗi kết nối máy chủ.', 'error'); }
+        }
+
+        async function deleteAlbum(id) {
+            try {
+                const response = await fetch(`/api/albums/${encodeURIComponent(id)}`, { method: 'DELETE' });
+                const result = await response.json();
+                if (response.status === 401) return handleAuthRequired();
+                if (!response.ok) return showToast(result.error || 'Không thể xóa album.', 'error');
+                await Promise.all([loadAlbums(), loadMedia(), loadAdminStats()]);
+                renderAlbumManager();
+                showToast('Đã xóa album; các tệp vẫn còn trong thư viện.', 'success');
+            } catch (error) { showToast('Lỗi kết nối máy chủ.', 'error'); }
+        }
+
         async function checkAuthStatus() {
             try {
                 const wasAdmin = isAdmin;
@@ -1131,12 +1392,19 @@
             const stateChanged = isAdmin !== authenticated;
             isAdmin = authenticated;
             uploadZone.hidden = !isAdmin;
+            document.getElementById('statsBar').hidden = !isAdmin;
             document.getElementById('loginTrigger').hidden = isAdmin;
             document.getElementById('logoutButton').hidden = !isAdmin;
+            document.getElementById('adminStatsToggle').hidden = !isAdmin;
+            document.getElementById('adminToolbar').hidden = !isAdmin;
+            document.getElementById('adminPanel').hidden = !isAdmin || document.getElementById('adminPanel').hidden;
             const badge = document.getElementById('adminBadge');
             badge.hidden = !isAdmin;
             badge.textContent = isAdmin ? `Admin · ${username || ''}` : '';
-            if (stateChanged) renderMediaGrid();
+            if (stateChanged) {
+                renderMediaGrid();
+                if (isAdmin) loadAdminStats();
+            }
         }
 
         async function loginAdmin(event) {
@@ -1244,6 +1512,15 @@
 
         async function uploadFiles(files) {
             if (files.length === 0) return;
+            const maxBytes = 100 * 1024 * 1024;
+            const oversized = files.filter(file => file.size > maxBytes);
+            if (oversized.length) {
+                showToast(`${oversized.map(file => file.name).join(', ')} vượt giới hạn 100 MB/tệp.`, 'error');
+                return;
+            }
+            if (files.some(file => file.type.startsWith('video/') && file.size > 80 * 1024 * 1024)) {
+                showToast('Có video lớn hơn 80 MB; video không được nén và giới hạn là 100 MB.', 'warning');
+            }
 
             uploadZone.classList.add('uploading');
             uploadProgress.classList.add('active');
@@ -1319,9 +1596,15 @@
 
             const query = searchInput.value.trim().toLocaleLowerCase('vi');
             const type = mediaFilter.value;
+            const selectedAlbum = albumFilter.value;
+            const fromDate = dateFrom.value;
+            const toDate = dateTo.value;
             visibleMediaFiles = mediaFiles.filter(item =>
                 (!query || item.name.toLocaleLowerCase('vi').includes(query)) &&
-                (type === 'all' || item.type === type)
+                (type === 'all' || type === 'favorite' && favoriteIds.has(item.id) || item.type === type) &&
+                (selectedAlbum === 'all' || selectedAlbum === 'none' && !item.albumId || item.albumId === selectedAlbum) &&
+                (!fromDate || item.createdAt.slice(0, 10) >= fromDate) &&
+                (!toDate || item.createdAt.slice(0, 10) <= toDate)
             );
             emptyState.hidden = mediaFiles.length > 0;
             noResultsState.hidden = mediaFiles.length === 0 || visibleMediaFiles.length > 0;
@@ -1350,6 +1633,7 @@
                         <button class="media-action-btn copy-media-btn" type="button" aria-label="Sao chép liên kết tệp" title="Sao chép liên kết">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
                         </button>
+                        <button class="media-action-btn favorite-btn ${favoriteIds.has(item.id) ? 'is-favorite' : ''}" type="button" aria-label="${favoriteIds.has(item.id) ? 'Bỏ yêu thích' : 'Thêm yêu thích'}" aria-pressed="${favoriteIds.has(item.id)}" title="Yêu thích">${favoriteIds.has(item.id) ? '♥' : '♡'}</button>
                         ${isAdmin ? `<button class="media-action-btn delete-btn" type="button" aria-label="Xóa tệp" title="Xóa tệp">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>` : ''}
@@ -1362,6 +1646,8 @@
                         <span class="media-size">${formatSize(item.size)}</span>
                     </div>
                     <div class="media-date">${formatDate(item.createdAt)}</div>
+                    ${item.albumName ? `<div class="media-album">${escapeHtml(item.albumName)}</div>` : ''}
+                    ${isAdmin ? `<select class="media-admin-select" aria-label="Chọn album cho ${escapeHtml(item.name)}"><option value="">Chưa xếp album</option>${albums.map(album => `<option value="${escapeHtml(album.id)}" ${item.albumId === album.id ? 'selected' : ''}>${escapeHtml(album.name)}</option>`).join('')}</select>` : ''}
                 </div>
             `;
 
@@ -1375,6 +1661,15 @@
                 e.stopPropagation();
                 copyMediaLink(item.url);
             });
+            card.querySelector('.favorite-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleFavorite(item);
+            });
+            const albumSelect = card.querySelector('.media-admin-select');
+            if (albumSelect) {
+                albumSelect.addEventListener('click', event => event.stopPropagation());
+                albumSelect.addEventListener('change', () => assignAlbum(item, albumSelect.value || null));
+            }
             const deleteButton = card.querySelector('.delete-btn');
             if (deleteButton) deleteButton.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -1382,6 +1677,31 @@
             });
 
             return card;
+        }
+
+        function toggleFavorite(item) {
+            if (favoriteIds.has(item.id)) favoriteIds.delete(item.id);
+            else favoriteIds.add(item.id);
+            try { localStorage.setItem('media-gallery-favorites', JSON.stringify([...favoriteIds])); } catch (error) { /* Favorites still work for this page view. */ }
+            renderMediaGrid();
+            if (lightbox.classList.contains('active')) {
+                const nextIndex = visibleMediaFiles.findIndex(media => media.id === item.id);
+                if (nextIndex < 0) closeLightbox();
+                else { currentLightboxIndex = nextIndex; updateLightbox(); }
+            }
+        }
+
+        async function assignAlbum(item, albumId) {
+            try {
+                const response = await fetch(`/api/media/${encodeURIComponent(item.id)}/album`, {
+                    method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ albumId })
+                });
+                const result = await response.json();
+                if (response.status === 401) return handleAuthRequired();
+                if (!response.ok) return showToast(result.error || 'Không thể gán album.', 'error');
+                await Promise.all([loadAlbums(), loadMedia(), loadAdminStats()]);
+                showToast('Đã cập nhật album của tệp.', 'success');
+            } catch (error) { showToast('Lỗi kết nối máy chủ.', 'error'); }
         }
 
         function deleteMedia(item) {
@@ -1463,6 +1783,13 @@
             }
 
             lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${visibleMediaFiles.length}`;
+            const favoriteButton = document.getElementById('lightboxFavorite');
+            const isFavorite = favoriteIds.has(item.id);
+            favoriteButton.textContent = isFavorite ? '♥ Đã yêu thích' : '♡ Yêu thích';
+            favoriteButton.classList.toggle('is-favorite', isFavorite);
+            favoriteButton.setAttribute('aria-pressed', String(isFavorite));
+            const downloadParams = new URLSearchParams({ resource_type: item.type, name: item.name });
+            document.getElementById('downloadMediaButton').href = `/api/media/${encodeURIComponent(item.id)}/download?${downloadParams}`;
         }
 
         function showToast(message, type = 'success') {
@@ -1475,6 +1802,8 @@
 
             if (type === 'success') {
                 toastIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />';
+            } else if (type === 'warning') {
+                toastIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01M10.3 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.7 3.86a2 2 0 00-3.4 0z" />';
             } else {
                 toastIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />';
             }
@@ -1507,8 +1836,9 @@
                     temporaryInput.style.opacity = '0';
                     document.body.appendChild(temporaryInput);
                     temporaryInput.select();
-                    document.execCommand('copy');
+                    const copied = document.execCommand('copy');
                     temporaryInput.remove();
+                    if (!copied) throw new Error('Clipboard write failed');
                 }
                 showToast('Đã sao chép liên kết tệp!', 'success');
             } catch (error) {
