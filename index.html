@@ -970,49 +970,86 @@
             fileInput.value = '';
         }
 
-        function uploadFiles(files) {
+        async function compressImage(file) {
+            const supportedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+            if (!supportedTypes.includes(file.type)) return file;
+
+            let imageUrl;
+            try {
+                imageUrl = URL.createObjectURL(file);
+                const image = new Image();
+                image.src = imageUrl;
+                await image.decode();
+
+                const scale = Math.min(1, 1920 / Math.max(image.naturalWidth, image.naturalHeight));
+                const canvas = document.createElement('canvas');
+                canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+                canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+                const context = canvas.getContext('2d');
+                if (!context) return file;
+                context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.82));
+                if (!blob || blob.type !== 'image/webp') return file;
+
+                const outputName = file.name.replace(/\.[^.]+$/, '') + '.webp';
+                return new File([blob], outputName, { type: 'image/webp', lastModified: file.lastModified });
+            } catch (error) {
+                console.warn('Image compression failed; uploading original file:', error);
+                return file;
+            } finally {
+                if (imageUrl) URL.revokeObjectURL(imageUrl);
+            }
+        }
+
+        async function uploadFiles(files) {
             if (files.length === 0) return;
 
             uploadZone.classList.add('uploading');
             uploadProgress.classList.add('active');
             progressFill.style.width = '0%';
 
-            const formData = new FormData();
-            files.forEach(file => {
-                formData.append('files', file);
-            });
+            try {
+                const processedFiles = await Promise.all(files.map(compressImage));
+                const formData = new FormData();
+                processedFiles.forEach(file => formData.append('files', file, file.name));
 
-            const xhr = new XMLHttpRequest();
+                const xhr = new XMLHttpRequest();
+                xhr.upload.addEventListener('progress', (e) => {
+                    if (e.lengthComputable) {
+                        const percent = Math.round((e.loaded / e.total) * 100);
+                        progressFill.style.width = percent + '%';
+                        progressText.textContent = `Đang tải lên: ${percent}%`;
+                    }
+                });
 
-            xhr.upload.addEventListener('progress', (e) => {
-                if (e.lengthComputable) {
-                    const percent = Math.round((e.loaded / e.total) * 100);
-                    progressFill.style.width = percent + '%';
-                    progressText.textContent = `Đang tải lên: ${percent}%`;
-                }
-            });
+                xhr.addEventListener('load', () => {
+                    uploadZone.classList.remove('uploading');
+                    uploadProgress.classList.remove('active');
 
-            xhr.addEventListener('load', () => {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        showToast(`Đã upload ${response.files.length} file!`, 'success');
+                        loadMedia();
+                    } else {
+                        showToast('Upload thất bại!', 'error');
+                    }
+                });
+
+                xhr.addEventListener('error', () => {
+                    uploadZone.classList.remove('uploading');
+                    uploadProgress.classList.remove('active');
+                    showToast('Lỗi kết nối server!', 'error');
+                });
+
+                xhr.open('POST', '/api/upload');
+                xhr.send(formData);
+            } catch (error) {
                 uploadZone.classList.remove('uploading');
                 uploadProgress.classList.remove('active');
-
-                if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    showToast(`Đã upload ${response.files.length} file!`, 'success');
-                    loadMedia();
-                } else {
-                    showToast('Upload thất bại!', 'error');
-                }
-            });
-
-            xhr.addEventListener('error', () => {
-                uploadZone.classList.remove('uploading');
-                uploadProgress.classList.remove('active');
-                showToast('Lỗi kết nối server!', 'error');
-            });
-
-            xhr.open('POST', '/api/upload');
-            xhr.send(formData);
+                console.error('Failed to prepare files for upload:', error);
+                showToast('Không thể chuẩn bị file để tải lên!', 'error');
+            }
         }
 
         function loadMedia() {
