@@ -1089,16 +1089,17 @@
 
             card.querySelector('.delete-btn').addEventListener('click', (e) => {
                 e.stopPropagation();
-                deleteMedia(item.id);
+                deleteMedia(item);
             });
 
             return card;
         }
 
-        function deleteMedia(id) {
+        function deleteMedia(item) {
             if (!confirm('Bạn có chắc muốn xóa file này?')) return;
 
-            fetch(`/api/media/${id}`, { method: 'DELETE' })
+            const params = new URLSearchParams({ public_id: item.id, resource_type: item.type });
+            fetch(`/api/media?${params}`, { method: 'DELETE' })
                 .then(res => {
                     if (res.ok) {
                         showToast('Đã xóa file!', 'success');
