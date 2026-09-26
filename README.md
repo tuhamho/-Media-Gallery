@@ -1,8 +1,8 @@
 # 📸 Media Gallery - Cloud Edition
 
-Upload và chia sẻ ảnh/video với mọi người. File được lưu trên **Cloudinary** (miễn phí 25GB).
+Upload và chia sẻ ảnh/video với mọi người. File được lưu trên **Cloudinary** 
 
-## 🚀 Deploy lên Render.com (Miễn phí, chạy 24/7)
+## 🚀 Deploy lên Render.com 
 
 ### Bước 1: Chuẩn bị Cloudinary
 
