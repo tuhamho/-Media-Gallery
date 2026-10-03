@@ -1117,8 +1117,8 @@
             <div class="header-copy">
                 <div class="brand-mark" aria-hidden="true">M</div>
                 <div>
-                    <h1>Media Gallery</h1>
-                    <p>Thư viện ảnh và video được chia sẻ</p>
+                    <h1>Portfolio &amp; Gallery</h1>
+                    <p>Không gian trưng bày hình ảnh, video và dự án</p>
                 </div>
             </div>
             <div class="header-actions">
@@ -1137,6 +1137,56 @@
             </div>
         </header>
 
+        <main class="portfolio-main">
+        <section class="portfolio-hero" aria-labelledby="portfolioTitle">
+            <div class="portfolio-hero-topline"><span>PORTFOLIO / MEDIA ARCHIVE</span><span>01 — VISUAL STORIES</span></div>
+            <div class="portfolio-hero-main">
+                <div class="portfolio-hero-copy">
+                    <p class="portfolio-kicker"><span></span> MỘT KHÔNG GIAN SÁNG TẠO</p>
+                    <h2 id="portfolioTitle">Hình ảnh kể chuyện.<br><em>Mỗi album mở một thế giới.</em></h2>
+                    <p class="portfolio-intro">Từ những khung hình riêng lẻ đến các bộ sưu tập có chủ đề — khám phá, lưu giữ và chia sẻ mọi thứ trong cùng một nơi.</p>
+                    <div class="portfolio-hero-actions">
+                        <a class="portfolio-primary-link" href="#featuredWork">Khám phá tác phẩm <span aria-hidden="true">↘</span></a>
+                        <a class="portfolio-secondary-link" href="#gallerySection">Mở thư viện <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+                <div class="portfolio-hero-art" aria-hidden="true">
+                    <svg viewBox="0 0 420 330" fill="none">
+                        <path class="portfolio-art-orbit" d="M34 205C59 61 254 8 358 91c97 77 44 199-61 212-79 10-153-37-146-100 7-60 91-77 138-33"/>
+                        <path class="portfolio-art-orbit portfolio-art-orbit-secondary" d="M73 263c73 42 188 42 258-20 52-47 44-116 9-151"/>
+                        <rect class="portfolio-art-frame portfolio-art-frame-back" x="120" y="54" width="174" height="220" rx="4" transform="rotate(11 120 54)"/>
+                        <rect class="portfolio-art-frame" x="104" y="62" width="174" height="220" rx="4" transform="rotate(-8 104 62)"/>
+                        <path class="portfolio-art-landscape" d="m91 190 47-50 31 29 43-65 54 86"/>
+                        <circle class="portfolio-art-sun" cx="225" cy="119" r="15"/>
+                        <path class="portfolio-art-glint" d="m313 76 8 18 18 8-18 8-8 18-8-18-18-8 18-8zm-231 91 5 11 11 5-11 5-5 11-5-11-11-5 11-5z"/>
+                    </svg>
+                    <span class="portfolio-art-caption">FRAME<br>01 / 04</span>
+                </div>
+            </div>
+            <div class="portfolio-hero-bottomline">
+                <span>THƯ VIỆN CÔNG KHAI · ẢNH &amp; VIDEO</span>
+                <span><strong id="portfolioMediaCount">0</strong> TÁC PHẨM</span>
+                <a href="#gallerySection">CUỘN ĐỂ KHÁM PHÁ <span aria-hidden="true">↓</span></a>
+            </div>
+        </section>
+
+        <section class="portfolio-note" id="portfolioAbout" aria-labelledby="portfolioNoteTitle">
+            <p class="portfolio-section-index">01 / CÂU CHUYỆN</p>
+            <div>
+                <h2 id="portfolioNoteTitle">Một thư viện.<br><em>Nhiều lát cắt.</em></h2>
+                <p>Album kết nối những khung hình cùng chủ đề. Thư viện giữ toàn bộ ảnh và video công khai để bạn có thể tìm kiếm, xem toàn màn hình hoặc chia sẻ từng tác phẩm.</p>
+            </div>
+            <a href="#gallerySection" class="portfolio-text-link">Đi tới thư viện <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section class="portfolio-featured" id="featuredWork" aria-labelledby="featuredWorkTitle">
+            <div class="portfolio-section-heading">
+                <div><p class="portfolio-section-index">02 / TUYỂN CHỌN</p><h2 id="featuredWorkTitle">Tác phẩm nổi bật</h2></div>
+                <a href="#gallerySection" class="portfolio-text-link">Xem toàn bộ <span aria-hidden="true">↘</span></a>
+            </div>
+            <div class="portfolio-project-grid" id="portfolioProjectGrid"></div>
+        </section>
+
 
         <svg class="theme-art" viewBox="0 0 1200 100" aria-hidden="true" focusable="false">
             <g class="art-studio"><path d="M12 77c15-44 35-50 65-22s69 14 82-7M850 80h170"/><circle cx="1135" cy="44" r="31" fill="currentColor" opacity=".18"/><path d="m530 12 43 65h-80Z" fill="currentColor" opacity=".2"/><path d="m1050 15 32 13-36 8 34 15-38 10"/></g>
@@ -1154,6 +1204,14 @@
                 <button id="sidebarMenuToggle" class="sidebar-menu-toggle" type="button" aria-expanded="false" aria-controls="galleryNavigation">Điều hướng<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
                 <p class="sidebar-kicker">Không gian sáng tạo</p>
                 <nav class="sidebar-nav" id="galleryNavigation">
+                    <a class="sidebar-link" href="#portfolioTitle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><path d="M4 19.5 9 4l5.2 15.5M6 14h6m2-2 2.5-7L21 19.5m-6.3-5H19"/></svg>
+                        Portfolio
+                    </a>
+                    <a class="sidebar-link" href="#featuredWork">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/></svg>
+                        Tác phẩm
+                    </a>
                     <a class="sidebar-link" href="#gallerySection">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                         Thư viện
@@ -1169,7 +1227,7 @@
                 </nav>
                 <div class="sidebar-note"><strong>Media Gallery</strong>Một góc nhỏ để lưu giữ và xem lại những khoảnh khắc của bạn.</div>
             </aside>
-            <main class="gallery-main">
+            <section class="gallery-main" aria-label="Thư viện ảnh và video">
         <div class="upload-zone admin-only" id="uploadZone" role="button" tabindex="0" aria-label="Tải ảnh hoặc video lên" hidden>
             <div class="upload-content">
                 <div class="upload-icon">
@@ -1282,8 +1340,9 @@
             <h3>Không tìm thấy tệp phù hợp</h3>
             <p>Thử từ khóa khác hoặc đổi bộ lọc.</p>
         </div>
-            </main>
+            </section>
         </div>
+        </main>
     </div>
 
     <dialog class="theme-picker-dialog" id="themePickerDialog" aria-labelledby="themePickerTitle">
@@ -1378,6 +1437,7 @@
         const uploadZone = document.getElementById('uploadZone');
         const fileInput = document.getElementById('fileInput');
         const mediaGrid = document.getElementById('mediaGrid');
+        const portfolioProjectGrid = document.getElementById('portfolioProjectGrid');
         const emptyState = document.getElementById('emptyState');
         const statsBar = document.getElementById('statsBar');
         const lightbox = document.getElementById('lightbox');
@@ -1441,6 +1501,11 @@
             dateFrom.value = '';
             dateTo.value = '';
             renderMediaGrid();
+        });
+        portfolioProjectGrid.addEventListener('click', event => {
+            const project = event.target.closest('[data-featured-media-id]');
+            if (!project) return;
+            openFeaturedMedia(project.dataset.featuredMediaId);
         });
         document.getElementById('loginTrigger').addEventListener('click', () => {
             loginError.textContent = '';
@@ -1623,6 +1688,7 @@
                     albums.map(album => `<option value="${escapeHtml(album.id)}">${escapeHtml(album.name)} (${album.count})</option>`).join('');
                 if (![...albumFilter.options].some(option => option.value === albumFilter.value)) albumFilter.value = 'all';
                 renderMediaGrid();
+                renderPortfolioShowcase();
             } catch (error) {
                 console.error('Failed to load albums:', error);
             }
@@ -1942,6 +2008,7 @@
                     mediaLoaded = true;
                     status.hidden = true;
                     renderMediaGrid();
+                    renderPortfolioShowcase();
                     updateStats();
                     refreshBtn.classList.remove('loading');
                 })
@@ -1980,6 +2047,71 @@
                 mediaGrid.appendChild(card);
             });
             syncThemeLayout();
+        }
+
+        function renderPortfolioShowcase() {
+            document.getElementById('portfolioMediaCount').textContent = mediaFiles.length.toLocaleString('vi-VN');
+            portfolioProjectGrid.replaceChildren();
+            if (!mediaFiles.length) {
+                const empty = document.createElement('p');
+                empty.className = 'portfolio-project-empty';
+                empty.textContent = 'Chưa có tác phẩm công khai. Các ảnh và video mới sẽ tự xuất hiện tại đây.';
+                portfolioProjectGrid.appendChild(empty);
+                return;
+            }
+
+            const projects = [];
+            const featuredAlbumIds = new Set();
+            albums.forEach(album => {
+                const projectMedia = mediaFiles.find(item => item.albumId === album.id);
+                if (!projectMedia || projects.length >= 3) return;
+                const count = mediaFiles.filter(item => item.albumId === album.id).length;
+                projects.push({ item:projectMedia, albumId:album.id, title:album.name, eyebrow:`ALBUM · ${String(count).padStart(2,'0')} TÁC PHẨM` });
+                featuredAlbumIds.add(album.id);
+            });
+            mediaFiles.forEach(item => {
+                if (projects.length >= 3 || item.albumId && featuredAlbumIds.has(item.albumId)) return;
+                projects.push({
+                    item,
+                    title:item.albumName || item.name,
+                    eyebrow:item.albumName ? `ALBUM · ${item.type === 'video' ? 'VIDEO' : 'ẢNH'}` : `TÁC PHẨM · ${item.type === 'video' ? 'VIDEO' : 'ẢNH'}`
+                });
+                if (item.albumId) featuredAlbumIds.add(item.albumId);
+            });
+
+            projects.forEach((project, index) => {
+                const item = project.item;
+                const card = document.createElement('button');
+                card.type = 'button';
+                card.className = `portfolio-project-card portfolio-project-card-${index + 1}`;
+                card.dataset.featuredMediaId = item.id;
+                card.setAttribute('aria-label', `Mở tác phẩm: ${project.title}`);
+                card.innerHTML = `
+                    <span class="portfolio-project-cover">
+                        ${item.type === 'image'
+                            ? `<img src="${escapeHtml(item.url)}" alt="" loading="lazy">`
+                            : `<video src="${escapeHtml(item.url)}" muted playsinline preload="metadata" aria-label="Video: ${escapeHtml(item.name)}"></video><span class="portfolio-video-mark" aria-hidden="true">▶</span>`}
+                        <span class="portfolio-project-number">${String(index + 1).padStart(2,'0')}</span>
+                        <span class="portfolio-project-open" aria-hidden="true">↗</span>
+                    </span>
+                    <span class="portfolio-project-details">
+                        <span class="portfolio-project-eyebrow">${escapeHtml(project.eyebrow)}</span>
+                        <span class="portfolio-project-title">${escapeHtml(project.title)}</span>
+                        <span class="portfolio-project-meta">${escapeHtml(item.name)} <span>·</span> ${escapeHtml(formatDate(item.createdAt))}</span>
+                    </span>`;
+                portfolioProjectGrid.appendChild(card);
+            });
+        }
+
+        function openFeaturedMedia(mediaId) {
+            searchInput.value = '';
+            mediaFilter.value = 'all';
+            albumFilter.value = 'all';
+            dateFrom.value = '';
+            dateTo.value = '';
+            renderMediaGrid();
+            const index = visibleMediaFiles.findIndex(item => item.id === mediaId);
+            if (index >= 0) openLightbox(index);
         }
 
         function createMediaCard(item, index) {

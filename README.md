@@ -1,6 +1,6 @@
 # Media Gallery
 
-Thư viện ảnh và video công khai. Khách có thể xem, tìm kiếm, lọc theo loại/album/ngày, yêu thích trên trình duyệt, sao chép liên kết và tải tệp. Chỉ admin đăng nhập mới có thể tải lên, xóa tệp, quản lý album và xem thống kê. Media tiếp tục được lưu trên Cloudinary trong thư mục `media-gallery`.
+Portfolio kết hợp thư viện ảnh và video công khai. Trang đầu giới thiệu không gian sáng tạo và tự chọn tác phẩm nổi bật từ media/album thật trên Cloudinary; nhấn một tác phẩm sẽ mở viewer của thư viện. Khách có thể tìm kiếm, lọc theo loại/album/ngày, yêu thích trên trình duyệt, sao chép liên kết và tải tệp. Chỉ admin đăng nhập mới có thể tải lên, xóa tệp, quản lý album và xem thống kê. Media tiếp tục được lưu trên Cloudinary trong thư mục `media-gallery`.
 
 ## Website
 
