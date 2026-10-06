@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Gallery</title>
+    <title>Portfolio &amp; Gallery — Media Gallery</title>
+    <meta name="description" content="Portfolio sáng tạo kết hợp thư viện ảnh và video công khai.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -1150,17 +1151,13 @@
                         <a class="portfolio-secondary-link" href="#gallerySection">Mở thư viện <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
-                <div class="portfolio-hero-art" aria-hidden="true">
-                    <svg viewBox="0 0 420 330" fill="none">
-                        <path class="portfolio-art-orbit" d="M34 205C59 61 254 8 358 91c97 77 44 199-61 212-79 10-153-37-146-100 7-60 91-77 138-33"/>
-                        <path class="portfolio-art-orbit portfolio-art-orbit-secondary" d="M73 263c73 42 188 42 258-20 52-47 44-116 9-151"/>
-                        <rect class="portfolio-art-frame portfolio-art-frame-back" x="120" y="54" width="174" height="220" rx="4" transform="rotate(11 120 54)"/>
-                        <rect class="portfolio-art-frame" x="104" y="62" width="174" height="220" rx="4" transform="rotate(-8 104 62)"/>
-                        <path class="portfolio-art-landscape" d="m91 190 47-50 31 29 43-65 54 86"/>
-                        <circle class="portfolio-art-sun" cx="225" cy="119" r="15"/>
-                        <path class="portfolio-art-glint" d="m313 76 8 18 18 8-18 8-8 18-8-18-18-8 18-8zm-231 91 5 11 11 5-11 5-5 11-5-11-11-5 11-5z"/>
-                    </svg>
-                    <span class="portfolio-art-caption">FRAME<br>01 / 04</span>
+                <div class="portfolio-hero-art">
+                    <figure class="portfolio-mascot-card" id="portfolioMascotCard">
+                        <img src="assets/mascot-duo.png" alt="Mèo xám ngồi trên sinh vật tròn màu cam, cả hai có vẻ mặt cau có" loading="eager" fetchpriority="high">
+                        <figcaption><span>MASCOT / 01</span><span>CẶP ĐÔI KHÓ Ở</span></figcaption>
+                    </figure>
+                    <span class="portfolio-mascot-orbit portfolio-mascot-orbit-one" aria-hidden="true"></span>
+                    <span class="portfolio-mascot-orbit portfolio-mascot-orbit-two" aria-hidden="true"></span>
                 </div>
             </div>
             <div class="portfolio-hero-bottomline">
@@ -1438,6 +1435,8 @@
         const fileInput = document.getElementById('fileInput');
         const mediaGrid = document.getElementById('mediaGrid');
         const portfolioProjectGrid = document.getElementById('portfolioProjectGrid');
+        const portfolioMascotCard = document.getElementById('portfolioMascotCard');
+        const portfolioHero = document.querySelector('.portfolio-hero');
         const emptyState = document.getElementById('emptyState');
         const statsBar = document.getElementById('statsBar');
         const lightbox = document.getElementById('lightbox');
@@ -1507,6 +1506,25 @@
             if (!project) return;
             openFeaturedMedia(project.dataset.featuredMediaId);
         });
+        const supportsMascotTilt = typeof window.matchMedia === 'function' &&
+            window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+            !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (supportsMascotTilt) {
+            portfolioHero.addEventListener('pointerenter', () => portfolioMascotCard.classList.add('is-reacting'));
+            portfolioHero.addEventListener('pointermove', event => {
+                const bounds = portfolioHero.getBoundingClientRect();
+                const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - .5) * 2));
+                const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - .5) * 2));
+                portfolioMascotCard.style.setProperty('--mascot-rotate-x', `${(-y * 5).toFixed(2)}deg`);
+                portfolioMascotCard.style.setProperty('--mascot-rotate-y', `${(x * 7).toFixed(2)}deg`);
+                portfolioMascotCard.style.setProperty('--mascot-shift-x', `${(x * 34).toFixed(2)}px`);
+                portfolioMascotCard.style.setProperty('--mascot-shift-y', `${(y * 25).toFixed(2)}px`);
+            });
+            portfolioHero.addEventListener('pointerleave', () => {
+                portfolioMascotCard.classList.remove('is-reacting');
+                ['--mascot-rotate-x','--mascot-rotate-y','--mascot-shift-x','--mascot-shift-y'].forEach(property => portfolioMascotCard.style.removeProperty(property));
+            });
+        }
         document.getElementById('loginTrigger').addEventListener('click', () => {
             loginError.textContent = '';
             loginDialog.showModal();

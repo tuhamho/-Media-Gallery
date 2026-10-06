@@ -1275,15 +1275,14 @@ body[data-gallery-theme] .portfolio-secondary-link:hover,
 body[data-gallery-theme] .portfolio-text-link:hover { color:var(--accent-primary); }
 body[data-gallery-theme] .portfolio-hero-art { position:relative; display:grid; place-items:center; min-height:340px; isolation:isolate; }
 body[data-gallery-theme] .portfolio-hero-art::before { content:''; position:absolute; z-index:-1; width:min(75%,260px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,color-mix(in srgb,var(--accent-primary) 26%,transparent),transparent 70%); filter:blur(8px); }
-body[data-gallery-theme] .portfolio-hero-art svg { width:min(100%,420px); overflow:visible; filter:drop-shadow(0 22px 18px #08050b70); transform:rotate(2deg); }
-body[data-gallery-theme] .portfolio-art-orbit { stroke:color-mix(in srgb,var(--accent-primary) 62%,transparent); stroke-width:1.5; stroke-dasharray:2 9; }
-body[data-gallery-theme] .portfolio-art-orbit-secondary { stroke:color-mix(in srgb,var(--accent-secondary) 58%,transparent); stroke-dasharray:1 7; }
-body[data-gallery-theme] .portfolio-art-frame { fill:color-mix(in srgb,var(--card-bg) 85%,var(--bg-secondary)); stroke:color-mix(in srgb,var(--text-primary) 62%,var(--card-border)); stroke-width:2; }
-body[data-gallery-theme] .portfolio-art-frame-back { fill:color-mix(in srgb,var(--accent-secondary) 35%,var(--bg-secondary)); stroke:color-mix(in srgb,var(--accent-secondary) 60%,white); }
-body[data-gallery-theme] .portfolio-art-landscape { stroke:var(--accent-primary); stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
-body[data-gallery-theme] .portfolio-art-sun { fill:var(--accent-secondary); }
-body[data-gallery-theme] .portfolio-art-glint { fill:color-mix(in srgb,var(--accent-primary) 70%,white); }
-body[data-gallery-theme] .portfolio-art-caption { position:absolute; right:7%; bottom:11%; color:var(--text-muted); font:600 .58rem/1.6 ui-monospace,Consolas,monospace; letter-spacing:.18em; transform:rotate(5deg); }
+body[data-gallery-theme] .portfolio-mascot-card { position:relative; z-index:1; width:min(74%,290px); margin:0; padding:7px 7px 0; overflow:hidden; border:1px solid color-mix(in srgb,var(--accent-primary) 42%,#fff8); border-radius:7px 3px; background:linear-gradient(145deg,#fff9,#ffffff12 30%,#08051055); box-shadow:inset 0 1px #ffffffad,0 7px 0 color-mix(in srgb,var(--accent-secondary) 35%,#18101c),0 22px 38px #07050c99; transform:perspective(900px) translate3d(var(--mascot-shift-x,0px),var(--mascot-shift-y,0px),0) rotateX(var(--mascot-rotate-x,0deg)) rotateY(var(--mascot-rotate-y,0deg)) rotate(2deg); transform-style:preserve-3d; transition:transform .2s cubic-bezier(.2,.7,.25,1),box-shadow .2s; }
+body[data-gallery-theme] .portfolio-mascot-card:hover { box-shadow:inset 0 1px #ffffffc7,0 8px 0 color-mix(in srgb,var(--accent-secondary) 35%,#18101c),0 29px 48px #07050cb8; }
+body[data-gallery-theme] .portfolio-mascot-card img { display:block; width:100%; height:auto; aspect-ratio:2/3; object-fit:contain; border-radius:3px 3px 0 0; }
+body[data-gallery-theme] .portfolio-mascot-card figcaption { display:flex; justify-content:space-between; gap:8px; padding:9px 4px 10px; color:var(--text-primary); font:700 .55rem/1.4 ui-monospace,Consolas,monospace; letter-spacing:.1em; }
+body[data-gallery-theme] .portfolio-mascot-card figcaption span:last-child { color:var(--accent-primary); }
+body[data-gallery-theme] .portfolio-mascot-orbit { position:absolute; z-index:0; display:block; width:74%; aspect-ratio:1; border:1px solid color-mix(in srgb,var(--accent-primary) 48%,transparent); border-radius:50%; pointer-events:none; }
+body[data-gallery-theme] .portfolio-mascot-orbit-one { transform:scaleY(.48) rotate(-17deg); }
+body[data-gallery-theme] .portfolio-mascot-orbit-two { width:82%; border-color:color-mix(in srgb,var(--accent-secondary) 55%,transparent); transform:scaleY(.43) rotate(21deg); }
 body[data-gallery-theme] .portfolio-hero-bottomline { min-height:51px; border-top:1px solid color-mix(in srgb,var(--card-border) 80%,transparent); font-size:.58rem; }
 body[data-gallery-theme] .portfolio-hero-bottomline strong { margin-right:5px; color:var(--text-primary); font-size:.8rem; }
 body[data-gallery-theme] .portfolio-hero-bottomline a { color:var(--accent-primary); text-decoration:none; }
@@ -1340,7 +1339,8 @@ body.theme-current .portfolio-project-card:hover { transform:translateY(-5px) ro
     body[data-gallery-theme] .portfolio-hero-copy { padding:29px 0 31px; }
     body[data-gallery-theme] .portfolio-hero h2 { max-width:600px; font-size:clamp(2.55rem,10vw,4.3rem); }
     body[data-gallery-theme] .portfolio-intro { max-width:540px; margin-top:15px; font-size:.91rem; }
-    body[data-gallery-theme] .portfolio-hero-art { display:none; }
+    body[data-gallery-theme] .portfolio-hero-art { display:grid; min-height:0; width:min(100%,250px); margin:0 auto 28px; }
+    body[data-gallery-theme] .portfolio-mascot-card { width:min(88%,220px); transform:rotate(1deg); }
     body[data-gallery-theme] .portfolio-hero-bottomline { flex-wrap:wrap; justify-content:flex-start; gap:8px 20px; padding:11px 0; font-size:.5rem; }
     body[data-gallery-theme] .portfolio-note { grid-template-columns:1fr; gap:8px; padding:25px 3px 28px; }
     body[data-gallery-theme] .portfolio-note h2 { font-size:2.5rem; }
@@ -1367,4 +1367,74 @@ body.theme-current .portfolio-project-card:hover { transform:translateY(-5px) ro
     body[data-gallery-theme] .portfolio-primary-link:hover,
     body[data-gallery-theme] .portfolio-project-card:hover,
     body.theme-current .portfolio-project-card:nth-child(n) { transform:none; }
+}
+
+/* Full-screen interactive mascot scene for Current and Dreamy Love. */
+body:is(.theme-current,.theme-love) .container { padding:12px 40px 54px; }
+body:is(.theme-current,.theme-love) header { grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:18px; margin:0 0 12px; padding:12px 20px; border:1px solid #ff71934d; border-radius:18px 5px; background:linear-gradient(120deg,#17131ff2,#211726ed 58%,#102328ed); box-shadow:inset 0 1px #fff2,0 8px 20px #07070d5c; }
+body:is(.theme-current,.theme-love)[data-theme="light"] header { background:linear-gradient(120deg,#fff7e9f5,#ffe9dff0 58%,#e4f4f0ed); }
+body:is(.theme-current,.theme-love) .header-copy { align-items:center; gap:12px; }
+body:is(.theme-current,.theme-love) .brand-mark { width:48px; height:48px; border-width:2px; border-radius:14px 4px; box-shadow:3px 4px 0 #36182d,0 0 18px #f04e6b35; }
+body:is(.theme-current,.theme-love) header h1 { font-size:clamp(1.7rem,3.6vw,3.35rem); line-height:1; letter-spacing:-.065em; }
+body:is(.theme-current,.theme-love) header p { margin-top:4px; font-size:.72rem; letter-spacing:.055em; }
+body:is(.theme-current,.theme-love) .header-actions { display:flex; align-items:center; gap:10px; }
+body:is(.theme-current,.theme-love) .connection-status { margin:0 3px 0 0; font-size:.75rem; }
+body:is(.theme-current,.theme-love) .admin-actions { gap:7px; }
+body:is(.theme-current,.theme-love) :is(.login-trigger,.logout-btn,.theme-picker-trigger,.theme-toggle) { min-height:40px; padding:8px 12px; border-radius:9px 3px; }
+body:is(.theme-current,.theme-love) .portfolio-hero { min-height:max(650px,calc(100svh - 155px)); margin-bottom:18px; padding:20px 30px 0; border-radius:25px 5px; }
+body:is(.theme-current,.theme-love) .portfolio-hero-topline { padding-bottom:12px; }
+body:is(.theme-current,.theme-love) .portfolio-hero-main { flex:1; grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr); min-height:0; gap:16px; }
+body:is(.theme-current,.theme-love) .portfolio-hero-copy { padding:20px 0 26px; }
+body:is(.theme-current,.theme-love) .portfolio-hero h2 { max-width:760px; font-size:clamp(3.05rem,5.25vw,6.1rem); line-height:.93; }
+body:is(.theme-current,.theme-love) .portfolio-intro { max-width:560px; margin-top:17px; }
+body:is(.theme-current,.theme-love) .portfolio-hero-art { min-height:0; height:100%; margin:0 8px 4px 0; perspective:1100px; }
+body:is(.theme-current,.theme-love) .portfolio-hero-art::before { width:min(82%,420px); background:radial-gradient(circle,#ef416c45 0,#902b8740 38%,transparent 72%); filter:blur(13px); }
+body:is(.theme-current,.theme-love) .portfolio-mascot-card { width:auto; max-width:min(100%,480px); padding:8px 8px 0; border-radius:9px 4px; box-shadow:inset 0 1px #ffffffbd,0 9px 0 #702c4b,0 30px 56px #05030ab8; transition:transform .12s ease-out,box-shadow .25s; }
+body:is(.theme-current,.theme-love) .portfolio-mascot-card img { width:auto; height:min(68svh,700px); max-width:100%; aspect-ratio:2/3; object-fit:contain; }
+body:is(.theme-current,.theme-love) .portfolio-mascot-card figcaption { padding:10px 6px 12px; font-size:.62rem; }
+body:is(.theme-current,.theme-love) .portfolio-mascot-card.is-reacting img { animation:mascot-react 560ms cubic-bezier(.2,.75,.25,1) both; }
+body:is(.theme-current,.theme-love) .portfolio-mascot-orbit-one { width:105%; border-color:#ff79b47a; }
+body:is(.theme-current,.theme-love) .portfolio-mascot-orbit-two { width:116%; border-color:#ffae695c; }
+@keyframes mascot-react {
+    0%,100% { transform:translateY(0) scale(1); }
+    28% { transform:translateY(-9px) scale(1.012); }
+    58% { transform:translateY(2px) scale(.995); }
+}
+@media(max-width:1050px) {
+    body:is(.theme-current,.theme-love) .container { padding-inline:22px; }
+    body:is(.theme-current,.theme-love) .portfolio-hero { padding-inline:22px; }
+    body:is(.theme-current,.theme-love) .portfolio-hero-main { grid-template-columns:minmax(0,1fr) minmax(280px,.8fr); }
+    body:is(.theme-current,.theme-love) .portfolio-hero h2 { font-size:clamp(2.7rem,5.1vw,4.2rem); }
+    body:is(.theme-current,.theme-love) .portfolio-mascot-card img { height:min(62svh,590px); }
+}
+@media(max-width:760px) {
+    body:is(.theme-current,.theme-love) .container { padding:10px 12px 36px; }
+    body:is(.theme-current,.theme-love) header { display:flex; flex-direction:column; align-items:stretch; gap:10px; margin-bottom:10px; padding:11px 14px; border-radius:16px 4px; }
+    body:is(.theme-current,.theme-love) .header-copy { align-items:center; }
+    body:is(.theme-current,.theme-love) header h1 { font-size:clamp(1.65rem,7vw,2.35rem); }
+    body:is(.theme-current,.theme-love) .header-actions { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px; }
+    body:is(.theme-current,.theme-love) .admin-actions { flex-wrap:wrap; }
+    body:is(.theme-current,.theme-love) :is(.login-trigger,.logout-btn,.theme-picker-trigger,.theme-toggle) { min-height:42px; padding:7px 10px; }
+    body:is(.theme-current,.theme-love) .portfolio-hero { min-height:0; padding:14px 16px 0; border-radius:18px 4px; }
+    body:is(.theme-current,.theme-love) .portfolio-hero-main { display:grid; grid-template-columns:1fr; gap:0; }
+    body:is(.theme-current,.theme-love) .portfolio-hero-copy { padding:24px 0 15px; }
+    body:is(.theme-current,.theme-love) .portfolio-hero h2 { max-width:620px; font-size:clamp(2.55rem,9vw,4rem); }
+    body:is(.theme-current,.theme-love) .portfolio-intro { max-width:540px; margin-top:13px; font-size:.9rem; }
+    body:is(.theme-current,.theme-love) .portfolio-hero-art { display:grid; width:100%; min-height:0; height:auto; margin:6px auto 24px; }
+    body:is(.theme-current,.theme-love) .portfolio-mascot-card { width:auto; max-width:min(66vw,250px); padding:5px 5px 0; transform:none; }
+    body:is(.theme-current,.theme-love) .portfolio-mascot-card img { width:auto; height:min(38svh,320px); max-width:100%; }
+    body:is(.theme-current,.theme-love) .portfolio-mascot-card figcaption { padding:7px 4px 8px; font-size:.52rem; }
+    body:is(.theme-current,.theme-love) .portfolio-hero-bottomline { justify-content:space-between; gap:8px 12px; }
+}
+@media(max-width:450px) {
+    body:is(.theme-current,.theme-love) .container { padding-inline:9px; }
+    body:is(.theme-current,.theme-love) .portfolio-hero { padding-inline:13px; }
+    body:is(.theme-current,.theme-love) .portfolio-hero h2 { font-size:clamp(2.35rem,10vw,3rem); }
+    body:is(.theme-current,.theme-love) .header-actions { align-items:flex-start; flex-direction:column; }
+    body:is(.theme-current,.theme-love) .connection-status { margin:0; }
+}
+@media(prefers-reduced-motion:reduce) {
+    body:is(.theme-current,.theme-love) .portfolio-mascot-card,
+    body:is(.theme-current,.theme-love) .portfolio-mascot-card.is-reacting img { animation:none!important; transition:none!important; }
+    body:is(.theme-current,.theme-love) .portfolio-mascot-card.is-reacting img { transform:none!important; }
 }

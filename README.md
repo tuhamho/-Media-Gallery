@@ -2,6 +2,8 @@
 
 Portfolio kết hợp thư viện ảnh và video công khai. Trang đầu giới thiệu không gian sáng tạo và tự chọn tác phẩm nổi bật từ media/album thật trên Cloudinary; nhấn một tác phẩm sẽ mở viewer của thư viện. Khách có thể tìm kiếm, lọc theo loại/album/ngày, yêu thích trên trình duyệt, sao chép liên kết và tải tệp. Chỉ admin đăng nhập mới có thể tải lên, xóa tệp, quản lý album và xem thống kê. Media tiếp tục được lưu trên Cloudinary trong thư mục `media-gallery`.
 
+Mascot mèo xám và sinh vật cam trong hero dùng artwork được cung cấp tại `assets/mascot-duo.png`. Ảnh giữ nguyên nền đỏ. Ở giao diện Current và Dreamy Love, hero gần kín chiều cao màn hình; cặp mascot nghiêng và dịch nhẹ theo con trỏ, phản ứng khi rê vào. Chuyển động tự tắt trên thiết bị cảm ứng và khi bật chế độ giảm chuyển động.
+
 ## Website
 
 Truy cập [Media Gallery](https://media-gallery-2he4.onrender.com/).
